@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="image/iconCurved.png" type="image/png" sizes="16x16">
+    <!-- Primary Meta Tags -->
+    <title>[ BIZ Admin ] - M W F BIZ </title>
+    <meta name="title" content="[ BIZ Admin ] - M W F BIZ ">
+    <meta name="author" content="Es D">
+    <meta name="description" content="OBDM Admin Panel"> <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mwfbiz.com/">
+    <meta property="og:title" content="[ BIZ Admin ] - M W F BIZ ">
+    <meta property="og:description" content="OBDM Admin Panel">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ItsEsd/mwfbiz-com@4579e154a126fb6ec08f3dd157c352054349dc24/image/meta/mwfbiz-meta.jpg"> <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mwfbiz.com/">
+    <meta property="twitter:title" content="[ BIZ Admin ] - M W F BIZ ">
+    <meta property="twitter:description" content="OBDM Admin Panel">
+    <meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/ItsEsd/mwfbiz-com@4579e154a126fb6ec08f3dd157c352054349dc24/image/meta/mwfbiz-meta.jpg">
+    <link rel="stylesheet" href="vendor/style/bootstrap.4.5.2.min.css">
+    <script src="vendor/scripts/jquery.3.5.1.min.js"></script>
+    <script src="vendor/scripts/popper.1.16.0.min.js"></script>
+    <script src="vendor/scripts/bootstrap.4.5.2.min.js"></script>
+    <script src="vendor/scripts/jquery.3.4.0.min.js"></script>
+    <script src="vendor/scripts/jquery.1.19.0.validate.min.js"></script>
+    <script src="vendor/scripts/jquery.2.1.3.min.js"></script>
+    <script src="vendor/scripts/jquery-ui.1.11.2.min.js"></script>
+    <script src="index/biz-cook.js"></script>
+    <script src="vendor/scripts/kit.fontawesome.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body style="margin:0;" onload="typeWriter();">
+    <div id="falsebacksigup"></div>
+    <section>
+    <div align="center" id="sigcontainer">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" style="color:white;" class="bi bi-people-fill" viewBox="0 0 16 16">
+        <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+        <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+        <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+      </svg><br><br>
+      <div id="sigup" onclick="deleteAllCookies(); ">
+                  🎭 Sign Up as Admin / Login</div><br>
+                  <p id="commntsm" style="font-family: 'Courier New', Courier, monospace;color:white;"></p>
+            </div> 
+    </section> 
+<div id="adminmoto" align="center">
+<div id="mmottocontent">
+<form id="obdmmottoform" target="hiddenframe" autocomplete="off">
+  <div id="updateobdm">
+    <button class="btn btn-outline-warning" id="upmotto" type="button" style="width:70%;">Update</button>
+  </div>
+ <div id="mottoconimg">
+   <img id="mottothumbpicpost" style="display:none;" src="" onerror="showsvgpic(this);"/><svg id="motopicthumbpre" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+</svg><input id="mottothumb" type="url" class="form-control" placeholder="Enter thumbnail url" required></div>
+<input type="text" class="form-control" placeholder="Motto" id="mottoobdm" required>
+<div contenteditable="true" id="coneditmotto" readonly  oninput="document.getElementById('mottocondescp').value=document.getElementById('coneditmotto').innerHTML;">
+  <p onclick="document.getElementById('coneditmotto').innerHTML='';">Description..</p>
+</div>
+<span id="descpmoto" style="float:right;"></span>
+<br>
+<input id="mottocondescp" type="text" style="display:none;" required>
+  <input type="password" class="form-control" placeholder="OBDM Admi-in Key" id="obdmkey"required>
+  <span id="message" style="float:right;"></span>
+  <input type="text" class="form-control" placeholder="Confirm Key" id="confirmobdmkey" required>  
+<button class="btn btn-warning" id="continuemotoreg" type="submit" style="width:98%;">Continue</button>
+<button class="btn btn-warning" id="updatemotoreg" type="button" style="width:98%;display: none;">Update</button>
+<br><br>
+</form>
+</div>
+<button class="btn btn-outline-warning" id="mnbtnsh" onclick="$('#mmottocontent').toggle('slow');">M O N O L O G U E Motto</button>
+   </div>
+   <div id="mottoupdatd"></div>
+    <div>
+      <div align="center" id="logAd">
+        <div style="width:80%;max-width:400px;margin-top:40px;"><br><br>
+          <form target="hiddenframe"><img class="topImg" src="../image/biz-admin.jpg"><br> <br><input autocomplete="off" type="password" id="idop" class="form-control" placeholder="********" required /> <input autocomplete="off" type="submit" Value="Admi-in" style="width:100%;max-width:400px;background-color:#dd1d16;color:white;border:none;height:35px;border-radius:4px;" id="in"></form>
+        </div>
+        <div id="loader1" class="spinner-border text-light"></div> <br><br><br><br>
+      </div>
+      <!------------------------->
+      <div id="upd" style="display:none;">
+        <div align="center"><br>
+          <h4 style="text-shadow:1px 1px #dd1d16;color:white;">i__m__i</h4>
+        </div>
+        <hr style="border-color:white;width:40%">
+        <div id="gEdits" align="center">
+          <div class="collapsible">
+            <h4 style="color:white;">Go GIF<span style="float:right;">&#8803;</span></h4>
+          </div>
+          <div class="content">
+            <hr style="border-color:white;width:100%;max-width:600px;">
+            <form id="gif_edit" target="hiddenframe">
+              <div align="center"><input autocomplete="off" type="url" id="g1" name="GIFimi" class="form-control" placeholder="GIF Link" required /><input id="g2" autocomplete="off" type="url" name="GIFimi" class="form-control" placeholder="GIF Link" required /><input id="g3" autocomplete="off" type="url" name="GIFimi" class="form-control" placeholder="GIF Link" required /><input id="g4" autocomplete="off" type="url" name="GIFimi" class="form-control" placeholder="GIF Link" required /><input autocomplete="off" id="g5" type="url" name="GIFimi" class="form-control" placeholder="GIF Link" required /><input id="g6" autocomplete="off" type="url" name="GIFimi" class="form-control" placeholder="GIF Link" required /><input id="g7" autocomplete="off" type="url" name="GIFimi" class="form-control" placeholder="GIF Link" required /></div> <input autocomplete="off" type="submit" id="upGif" value="Update" />
+            </form><br><input autocomplete="off" type="button" id="pregif" value="Preview" disabled="disabled" style="background-color:blue;color:white;border:none;border-radius:4px;padding:4px 6px;" /><br>
+            <p id="connectUpGifs" style="color:white;display:none;">GIFs Updated</p> <input id="gifimi_json" oninput="checklength(this);" /><br> <button style="width:200px;" type="button" id="postgif" class="btn btn-warning" disabled><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z" /></svg> Post GIFs</button>
+            <div class="box">
+              <div id="preview_gif"></div>
+            </div>
+          </div>
+        </div>
+        <hr style="border-color:white;width:100%;max-width:600px;">
+        <div id="newedits" align="center">
+          <div class="collapsible">
+            <h4 style="color:white;">Hello, News<span style="float:right;">&#8803;</span></h4>
+          </div>
+          <div class="content">
+            <hr style="border-color:white;width:100%;max-width:600px;">
+            <form id="imi_news" target="hiddenframe">
+              <div align="center">
+                <div class="input_fields_wrap">
+                  <h5 style="float:left;color:white;">Featured News</h5><br><br><textarea rows="4" autocomplete="off" type="text" name="newsTitle" class="form-control" placeholder="News Title" required></textarea> <input autocomplete="off" type="url" name="newsLink" class="form-control" placeholder="News Link" required /> <input autocomplete="off" type="url" name="newsThumb" class="form-control" placeholder="News Thumbnail" required />
+                  <hr style="border-color:white;">
+                  <div class="contentN1">
+                    <p style="float:right;color:white;">Content News 1</p><textarea rows="4" autocomplete="off" type="text" name="conTitle1" class="form-control" placeholder="Header Content" required></textarea> <input autocomplete="off" type="url" name="conLink1" class="form-control" placeholder="Content News Link" required /> <textarea rows="4" autocomplete="off" type="text" name="conSiteName1" class="form-control" placeholder="Footer Content" required></textarea>
+                  </div>
+                  <hr style="border-color:white;">
+                  <div class="contentN2">
+                    <p style="float:right;color:white;">Content News 2</p><textarea rows="4" autocomplete="off" type="text" name="conTitle2" class="form-control" placeholder="Header Content" required></textarea> <input autocomplete="off" type="url" name="conLink2" class="form-control" placeholder="Content News Link" required /> <textarea rows="4" autocomplete="off" type="text" name="conSiteName2" class="form-control" placeholder="Footer Content" required></textarea>
+                  </div>
+                  <div class="wrapperNews slides"><br></div>
+                </div><br> <input autocomplete="off" id="next" type="submit" value="Update">
+              </div>
+            </form> <button class="add_field_button" style="background-color:green;border:none;color:white;border-radius:4px;padding:4px 6px;" id="addtod"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" /></svg> Add</button> <input autocomplete="off" type="button" id="newspre" onclick="PreTOD();" value="Preview" disabled="disabled" style="background-color:blue;color:white;border:none;border-radius:4px;padding:4px 6px;"><input autocomplete="off" id="iminews_json" oninput="checklength(this);" style="display:block;">
+            <div class="box-news">
+              <div id="test_newsimi"></div>
+            </div><br><button type="button" style="width:200px;" class="btn btn-warning" id="postn" disabled="disabled"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
+                <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z" />
+                <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z" /> </svg> Post News</button>
+            <div>
+              <div id="loader_n" class="spinner-border text-light"></div>
+              <p id="connectUpNews" style="color:white;display:none;">News Updated</p>
+            </div>
+          </div>
+        </div>
+        <hr style="border-color:white;width:100%;max-width:600px;">
+        <div id="youvid" align="center">
+          <div class="collapsible">
+            <h4 style="color:white;">Video Edit<span style="float:right;">&#8803;</span></h4>
+          </div>
+          <div class="content">
+            <hr style="border-color:white;width:100%;max-width:600px;">
+            <form id="imivid">
+              <div class="vid_wrap slides"> <input autocomplete="off" name="imiYouVid" type="url" class="form-control" id="youvlink" placeholder="Video Link(YouTube)" required /></div><br> <input autocomplete="off" type="submit" value="Update">
+            </form> <button class="addVid" id="addv" style="background-color:green;border:none;color:white;border-radius:4px;padding:4px 6px;margin-right:4px"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" /></svg> Add</button><input autocomplete="off" disabled="disabled" type="button" value="Preview" id="previd" style="background-color:blue;color:white;border:none;border-radius:4px;padding:4px 6px;" /> <input autocomplete="off" id="youvid_json" oninput="checklength(this);" style="display:block;">
+            <div class="box">
+              <div id="preview_youv"></div>
+            </div><br><button type="button" style="width:200px;" class="btn btn-warning" id="postv" disabled="disabled"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-reels" viewBox="0 0 16 16">
+                <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM1 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0z" />
+                <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7zm6 8.73V7.27l-3.5 1.555v4.35l3.5 1.556zM1 8v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z" />
+                <path d="M9 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM7 3a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" /> </svg> Post Videos</button>
+            <div>
+              <div id="loader_v" class="spinner-border text-light"></div>
+              <p id="connectUpVids" style="color:white;display:none;">Videos Updated</p>
+            </div>
+          </div>
+        </div>
+        <hr style="border-color:white;width:100%;max-width:600px;">
+        <div id="quotesEdits" align="center">
+          <div class="collapsible">
+            <h4 style="color:white;">Quotes<span style="float:right;">&#8803;</span></h4>
+          </div>
+          <div class="content">
+            <hr style="border-color:white;width:100%;max-width:600px;">
+            <form id="quote_edit" target="hiddenframe">
+              <div align="center"><textarea rows="4" autocomplete="off" type="text" id="quote1" name="Quoteimi" class="form-control" placeholder="Your Quote" required></textarea><textarea rows="4" id="quote2" autocomplete="off" type="text" name="Quoteimi" class="form-control" placeholder="Your Quote" required></textarea><textarea rows="4" id="quote3" autocomplete="off" type="text" name="Quoteimi" class="form-control" placeholder="Your Quote" required></textarea><textarea rows="4" id="quote4" autocomplete="off" type="text" name="Quoteimi" class="form-control" placeholder="Your Quote" required></textarea><textarea rows="4" autocomplete="off" id="quote5" type="text" name="Quoteimi" class="form-control" placeholder="Your Quote" required></textarea><textarea rows="4" id="quote6" autocomplete="off" type="text" name="Quoteimi" class="form-control" placeholder="Your Quote" required></textarea><textarea rows="4" id="quote7" autocomplete="off" type="text" name="Quoteimi" class="form-control" placeholder="Your Quote" required></textarea></div> <input autocomplete="off" type="submit" id="upQuote" value="Update" />
+            </form><br><input autocomplete="off" type="button" id="prequote" value="Preview" disabled="disabled" style="background-color:blue;color:white;border:none;border-radius:4px;padding:4px 6px;" /><br>
+            <p id="connectUpQuotes" style="color:white;display:none;">Quotes Updated</p> <input id="quoteimi_json" oninput="checklength(this);" /><br> <button style="width:200px;" type="button" id="postq" class="btn btn-warning" disabled><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-quote" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                <path d="M7.066 4.76A1.665 1.665 0 0 0 4 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112zm4 0A1.665 1.665 0 0 0 8 5.668a1.667 1.667 0 0 0 2.561 1.406c-.131.389-.375.804-.777 1.22a.417.417 0 1 0 .6.58c1.486-1.54 1.293-3.214.682-4.112z" /></svg> Post Quotes</button><br><br>
+            <div style="max-width:800px;">
+              <div id="preview_quote"></div>
+            </div>
+          </div>
+        </div>
+        <hr style="border-color:white;width:100%;max-width:600px;">
+        <div id="textarea" style="display:none;" align="center">
+          <div style="max-width:400px;"><span style="cursor:pointer;color:blue;float:right;" onclick="document.getElementById('textarea').style.display='none';">close</span><textarea class="form-control" rows="4" style="max-width:400px;border:1px solid blue;overflow:auto;"></textarea></div>
+        </div>
+        <div align="center">
+          <p><span onclick="document.getElementById('textarea').style.display='block';" style="cursor:pointer;color:white;">Textarea >></span><a target="_blank" style="cursor:pointer;color:white;text-decoration:none;" href="toolkit/"> Tools >></a></p>
+        </div>
+        <hr style="border-color:white;width:100%;max-width:600px;">
+        <div id="notifycharlimit">Exceeding Character Limit <span style='font-size:18px;'>&#9746;</span></div>
+
+        <div id="nvbtn" align="center">
+          <button class="btneb" id="imifrmedit" style="display:none;">Back</button></div>
+      </div>
+      <!----------------------->
+      <div id="iamin" style="display:none;">
+        <section>
+          <div id="crelitepass">
+            <div><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-circle-square" viewBox="0 0 16 16">
+                <path d="M0 6a6 6 0 1 1 12 0A6 6 0 0 1 0 6z" />
+                <path d="M12.93 5h1.57a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-1.57a6.953 6.953 0 0 1-1-.22v1.79A1.5 1.5 0 0 0 5.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 4h-1.79c.097.324.17.658.22 1z" />
+              </svg></div>
+          </div>
+          <div id="crelitebrd">
+            <form id="creltfrm" target="hiddenframe">
+              <label> Create Elite Pass:</label><br>
+              <input id="epassone" type="text" class="form-control creltin" placeholder="ABC" maxlength="3" style="text-transform: uppercase;" required />
+              <input id="epasstwo" type="text" class="form-control creltin" placeholder="6K" maxlength="2" style="text-transform: uppercase;" required />
+              <input id="epassthree" type="text" class="form-control creltin" placeholder="7458" maxlength="4" style="text-transform: uppercase;" required />
+              <input id="epassfour" type="text" class="form-control creltin" placeholder="DE" maxlength="2" style="text-transform: uppercase;" required />
+              <select id="sessionexp" class="form-control" required>
+                <option value="">- Session Expire</option>
+                <option value="1">1 Day</option>
+                <option value="2">2 Days</option>
+                <option value="3">3 Days</option>
+                <option value="4">4 Days</option>
+                <option value="5">5 Days</option>
+                <option value="6">6 Days</option>
+                <option value="7">7 Days</option>
+                <option value="14">14 Days</option>
+                <option value="28">28 Days</option>
+              </select><br />
+              <p class='elitepassnt'>N.B Previous pass will be deleted. </p>
+              <input id="mottostr" style="display: none;"><input id="mottotit" style="display: none;">
+             <div align="right"> <input type="submit" id="crtelite" value="Create"><input type="button" onclick='$("#crelitebrd").toggle("fast");' value="Close"></div>
+            </form>
+          </div>
+          <div id="elpasinfo">
+            <div id="elpasscreated"></div>
+            <div align="right"><button class='btn btn-light' onclick='downloadpass(this)'>Save ⬇⬇</button>
+              <button class='btn btn-light' onclick='$("#elpasinfo").hide("fast")';>Close</button></div>
+              <div id="AppShare"></div>
+          </div>
+        </section>
+      </div>
+      <!------------------------------------>
+      <div id="id03" align="center" style="display:none;"><br><br><br><br><img src="https://qotoqot.com/sad-animations/img/400/low_battery/low_battery.gif" width="180px" style="pointer-events:none;"> <br><br>
+        <button id="imie" onclick="show_wall();"><b>i____m____i</b></button><br>
+        <button class="btneb" id="update">Edit</button></div><br>
+      <div align="center" id="showhtml" style="display:none;">
+        <div id="motoinfoicon"><div>
+          <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+          </svg>
+        </div></div>
+        <div id="mottoconhold"><div id="motoinfo">
+          <div id="motoincon"></div>
+        </div></div>
+        <div align="center">
+          <h4 style="color:#DD1D16;padding:18px;text-shadow:1px 1px white;"><b>i____m____i</b></h4>
+          <div class="video-container1">
+            <div id="GIF2"></div>
+          </div>
+        </div>
+        <div id="loader" class="spinner-border text-light"></div>
+        <div align="center">
+          <div id="News1"></div>
+        </div><br>
+        <div class="box">
+          <div id="YoutubeOne"></div>
+        </div> <br>
+        <div id="clock"></div>
+        <div id="date"></div>
+        <div align="center"><br>
+          <div id="Bio2"></div>
+        </div><br> <button autocomplete="off" type="button" class="btneb" value="Back" onclick="monologueKey()">Back</button>
+        <br><br><br><br>
+      </div><br>
+    </div><br><br><br>
+<input id="hkhds" class='ckdsd'> <input id="usidobdmdef" type="text" class='ckdsd'/>
+<input id="hkhdu" class='ckdsd' ><input id="hkhdoc" type="text" class='ckdsd' >
+<iframe name="hiddenframe" id="hiddenframe" style="display:none;"></iframe>
+    <!--------Footer----->
+    <footer style="background:transparent;">
+      <div align="center" style="background:black;padding-top:10px;height:60px;">
+        <p><span style="float:left;"><a href="mailto:info@mwfbiz.com">info@mwfbiz.com</a></span><span style="color:#f0f0f0;float:right;">© 2022 by <b>m W F BIZ</b></span></p>
+      </div>
+    </footer>
+    <!--------Footer----->
+    <script src="index/biz-cook.js"></script>
+    <script src="js/g1.js">
+    </script>
+    <script src="js/g2.js">
+    </script>
+    <script>
+      var i = 0;
+      var txt = 'Thank you for visiting. Have a nice day. ';
+      var speed = 200;
+      function typeWriter() {
+        if (i < txt.length) {
+          document.getElementById("commntsm").innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);  
+        }
+        else if(i = txt.length){
+          i= 0;
+          document.getElementById("commntsm").innerHTML = "";
+         document.getElementById("commntsm").innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);  
+        }
+}</script></body></html>
