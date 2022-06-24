@@ -119,6 +119,10 @@ document.getElementById('coneditmotto').innerHTML = mottothumb[2];
 document.getElementById('obdmkey').value = res[0].IDOPM;
 document.getElementById('motopicthumbpre').style.display = "none";
 document.getElementById('mottothumbpicpost').style.display = "inline-block";
+var shname = "/i/"+userid+"/edit#true="+window.btoa(mottotit);
+let stateObj = { id: "0" };
+ window.history.replaceState(stateObj,
+       "", shname);
   }
 }
 
