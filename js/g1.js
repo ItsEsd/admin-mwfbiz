@@ -393,7 +393,7 @@
             var g = Math.floor((Math.random() * 6) + 1);
             var gifts = JSON.parse(res[0].GIFGifts);
             for (prop in res[0]) {
-              document.getElementById("GIF2").innerHTML = '<img frameborder="0" width="80%" style="max-width:500px;border-radius:4px;" src="' + gifts.GIFimi[g] + '"><hr class="wallhr">';
+              document.getElementById("GIF2").innerHTML = '<img frameborder="0" width="80%" style="max-width:400px;border-radius:4px;" src="' + gifts.GIFimi[g] + '"><hr class="wallhr">';
             }
             var k, m;
             var VID = JSON.parse(res[0].YouVid);
@@ -550,7 +550,7 @@
         };
       });
       jQuery(document).ready(function() {
-        jQuery('.box-news').hScroll(40);
+        // jQuery('.box-news').hScroll(40);
         $('#crelitepass').click(function(){
           $("#crelitebrd").toggle('fast');
         });
