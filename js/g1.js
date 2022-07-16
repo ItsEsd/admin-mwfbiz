@@ -412,7 +412,7 @@
                 if(news.newsTitle[k]==undefined){
                   news.newsTitle[k] = "Edit MONOLOGUE!";
                   news.newsLink[k] = "/#";
-                  news.newsThumb[k] = "../image/emptymono.png";
+                  news.newsThumb[k] = "https://cdn.jsdelivr.net/gh/ItsEsd/admin-mwfbiz@c6733df780c9c1bdc440b0d2a64798e8d07a79d3/image/emptymono.png";
                   news.conSiteName1[k] = "____________________ Empty!";
                   news.conLink1[k] = "/#";
                   news.conTitle1[k] = "";
