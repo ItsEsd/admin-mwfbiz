@@ -518,7 +518,7 @@ display:none;
   padding:4px;
 }
 .elitepassnt{
-  font-size: 14px;
+  font-size: 12px;
 }
 #crelitepass{
   bottom:50px;
@@ -732,7 +732,36 @@ a.ApShare:hover,
   padding:4px 10px;
   border-radius:4px;
 }
+.cplink{
+  font-size:21px;
+  margin-top:9px; 
+  margin-left:6px;
+  text-decoration:none;
+  color:#ffffff;
+  background:#333333;
+  padding:4px 20px;
+  border-radius:4px;
+  float: right;
+}
+#AppShare a{
+  text-decoration:none;
+}
 
+#lkcopied{
+  margin-top:10px;
+  width:100%;
+  z-index:10000;
+  display: none;
+}
+#lkcopied div{
+  /* max-width:240px; */
+  font-size: 18px;
+  padding:10px;
+  background-color: #a7a7a7;
+  border-radius: 0px;
+  color:#ffffffef;
+  text-align: center;
+}
 .noobdm{
   margin-top:20px;
   color: #696868;
