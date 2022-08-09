@@ -140,8 +140,6 @@ var mtobdmk = escape($('#confirmobdmkey').val());
 var mtobdmusd = $('#usidobdmdef').val();
 var obdmstr =escape(String(mtpicthumb +"{biz}"+mtmotto +"{biz}"+mtdescp +"{biz}"+mtobdmk)) ;
 if(mtpicthumb !='' && mtmotto!='' && mtdescp!='' && mtobdmk!=''){
-  //console.log(obdmstr);
- // console.log(mtobdmusd);
   var ur1 = "https://script.google.com/macros/s/";
       var ur2 = "AKfycbya6mMrGOM5UhgyD8If_5ZyUNq3vWN9bzpQqIGMiIF5Eqq1MF0XywDtom8LV1W67L-dHw";
       var urdm = ur1 + ur2 + "/exec";
@@ -175,6 +173,40 @@ function upobdmre(e){
 }
 
 creltfrm.addEventListener('submit', (event) => {
+  var ur1 = "https://script.google.com/macros/s/";
+  var ur2 = "AKfycbypYCXSfkW3wv7wuflnf_bZCX0HYl2sKSIQaqxp7LAnb97sUlHGPEsLT4PMHdsPpoxy";
+  var urdm = ur1 + ur2 + "/exec";
+  document.getElementById('crtelite').disabled = true;
+  checkelite(urdm);
+});
+
+
+function  checkelite(urdm){
+  var ep1 = $('#epassone').val();
+  var ep2 = $('#epasstwo').val();
+  var ep3 = $('#epassthree').val();
+  var ep4 = $('#epassfour').val();
+  var elop = String(ep1+ep2+ep3+ep4).toLocaleUpperCase();
+  var chur = urdm + '?callback=checkstus&elpass=' + elop + '&action=chelite';
+  var request = jQuery.ajax({
+  crossDomain: true,
+  url: chur,
+  method: "GET",
+  dataType: "jsonp"
+});
+}
+
+function checkstus(e){
+var res = e.result;
+if(res!="Pass not found!"){
+  document.getElementById('crtelite').disabled = false;
+  document.getElementById('elpasinfo').style.display="block";
+  document.getElementById('elpasscreated').innerHTML ="<p>This Pass can not be overwritten</p>";
+  document.getElementById('svbtnelt').style.display = "none";
+  document.getElementById('AppShare').innerHTML = "";
+  setTimeout(function(){document.getElementById('elpasinfo').style.display="none";},3000);
+}
+else{
   var ep1 = $('#epassone').val();
   var ep2 = $('#epasstwo').val();
   var ep3 = $('#epassthree').val();
@@ -197,11 +229,12 @@ creltfrm.addEventListener('submit', (event) => {
     method: "GET",
     dataType: "jsonp"
   });
-  //console.log(url);
-  document.getElementById('crtelite').disabled = true;
   document.getElementById('elpasscreated').innerHTML ="<p>|| Elite Pass: "+epassk+
   "<br>|| Session Expire: "+expires+"<br>---------------------------------<br>M W F BIZ</p>"
-});
+}
+ }
+
+
 
 function upelite(e){
   var res =e.result;
@@ -210,12 +243,25 @@ function upelite(e){
     var elitecon = document.getElementById('elpasscreated').innerText;
     var mottoad = $('#hkhdoc').val();
     var mottocons = mottoad.split('{biz}');
+    var rn1 = Math.random().toString(26).substring(2, 5) + Math.random().toString(26).substring(2, 5);
+    var rn2 = Math.random().toString(26).substring(2, 7) + Math.random().toString(26).substring(2, 7);
+    var newlk = "https://imi.mwfbiz.com?m="+window.btoa(rn1)+"-"+window.btoa(elitecon)+"-"+window.btoa(rn2)+"&elite=true";
+  document.getElementById('svbtnelt').style.display = "block";
   document.getElementById("AppShare").innerHTML = "<a title='Send Mail' class='ApShare mailshare' target='_parent' type='button' href='mailto:?body=" + String(mottocons[1]) + " - has a MONOLOGUE at https://imi.mwfbiz.com. " +
-   elitecon + "'><i class='fa fa-envelope' style='font-size:28px;color:#cc6600;'></i></a>";
+   elitecon + "'><i class='fa fa-envelope' style='font-size:28px;color:#cc6600;'></i></a><a title='Copy Link' class='ApShare cplink' target='_parent' type='button' onclick='copyellink(this)'>⛓</a><input id='elitlink' value='"+newlk+"' style='display:none;'>";
    document.getElementById('crtelite').disabled = false;
   }
 }
-
+function copyellink(label){
+  var newlk = document.getElementById('elitlink').value;
+  var textA = document.createElement("input");
+  textA.value = newlk;
+  textA.select();
+  textA.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(textA.value);
+  $('#lkcopied').slideDown('fast');
+  setTimeout(function(){$('#lkcopied').slideUp('fast');},2000);
+}
 function downloadInnerHtml(filename, elId, mimeType) {
   var elHtml = document.getElementById(elId).innerText;
   var link = document.createElement('a');
