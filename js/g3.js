@@ -203,7 +203,7 @@ $(document).ready(function(){
       dataType: "jsonp"
     });
     document.getElementById('elpasscreated').innerHTML ="<p>|| Elite Pass: "+epassk+
-    "<br>|| Session Expire: "+expires+"<br>---------------------------------<br>M W F BIZ</p>"
+    "<br>|| Session Expire: "+expires+"<br>---------------------------------<br>mwfbiz.COM</p>"
   }
    }
   
