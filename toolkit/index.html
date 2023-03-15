@@ -749,19 +749,19 @@ $('#textBox *:not(script)').each(function(){
     }
   })
 });
-console.log(classes);
+// console.log(classes);
 var _classlist = classes.length;
 for(var k = 0;k<_classlist;k++){
   if(classes[k] !=""){
     var cls ='.'+classes[k];
-  console.log(cls);
+  // console.log(cls);
   $(cls).removeAttr('id');
   $(cls).removeAttr('style');
   $(cls).removeAttr('dir');
   $(cls).removeAttr('class');
   }
 }
-console.log('All classes removed');
+// console.log('All classes removed');
 });
     </script>
 
