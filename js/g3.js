@@ -67,19 +67,8 @@ $(document).ready(function(){
             if(window.atob(userelcook[0].split('ybizc0=')[1]) =="BIZADMN" && window.atob(userelcook[2]) =="valid"){
               document.getElementById('falsebacksigup').style.display = "none"; 
               document.getElementById('sigcontainer').style.display = "none"; 
+              monologuecon();
             }
-          else{
-            document.getElementById('adminmoto').innerHTML='';
-            document.getElementById('logAd').innerHTML='';
-            document.getElementById('upd').innerHTML='';
-            document.getElementById('mottoupdatd').innerHTML='';
-            document.getElementById('adminmoto').style.display='none';
-            setTimeout(function(){
-            $('#falsebacksigup').fadeIn('fast');
-            $('#sigcontainer').fadeIn('fast');},
-            000); 
-          }
-    monologuecon();
   }}}});
   
   function monologuecon(){
