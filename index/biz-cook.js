@@ -67,9 +67,7 @@ function getCookie(cname) {
               document.getElementById('falsebacksigup').style.display = "none"; 
               document.getElementById('sigcontainer').style.display = "none"; 
             }
-          else{
-            notvalidusr();
-          }} }
+        } }
        // userCookie();
         } 
         else if(usergu != "" || userel != "" || userm != ""){
