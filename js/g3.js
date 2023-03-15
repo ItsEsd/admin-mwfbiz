@@ -54,8 +54,33 @@ $(document).ready(function(){
   });
   
   $(document).ready(function(){
+    var user = getCookie("_ybizc0"); 
+      if (user != "" ) {
+        var decodedCookie = decodeURIComponent(document.cookie); 
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i]; 
+          while (c.charAt(0) == ' ') { c = c.substring(1); 
+          } 
+          if (c.indexOf("_ybizc0") == 0) { 
+            var userelcook = c.substring(1).split('.');
+            if(window.atob(userelcook[0].split('ybizc0=')[1]) =="BIZADMN" && window.atob(userelcook[2]) =="valid"){
+              document.getElementById('falsebacksigup').style.display = "none"; 
+              document.getElementById('sigcontainer').style.display = "none"; 
+            }
+          else{
+            document.getElementById('adminmoto').innerHTML='';
+            document.getElementById('logAd').innerHTML='';
+            document.getElementById('upd').innerHTML='';
+            document.getElementById('mottoupdatd').innerHTML='';
+            document.getElementById('adminmoto').style.display='none';
+            setTimeout(function(){
+            $('#falsebacksigup').fadeIn('fast');
+            $('#sigcontainer').fadeIn('fast');},
+            000); 
+          }
     monologuecon();
-  });
+  }}}});
   
   function monologuecon(){
   var mtobdmusd = $('#usidobdmdef').val();
