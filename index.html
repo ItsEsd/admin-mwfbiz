@@ -68,7 +68,7 @@
   <input type="password" class="form-control" placeholder="OBDM Admi-in Key" id="obdmkey"required>
   <span id="message" style="float:right;"></span>
   <input type="text" class="form-control" placeholder="Confirm Key" id="confirmobdmkey" required>  
-<button class="btn btn-warning" id="continuemotoreg" type="submit" style="width:98%;">Continue</button>
+<button class="btn btn-warning" id="continuemotoreg" type="submit" style="width:98%;" onclick="setnewmotto();">Continue</button>
 <button class="btn btn-warning" id="updatemotoreg" type="button" style="width:98%;display: none;">Update</button>
 <br><br>
 </form>
@@ -302,4 +302,6 @@
           i++;
           setTimeout(typeWriter, speed);  
         }
-}setInterval(function(){console.clear();},500);</script></body></html>
+}
+// setInterval(function(){console.clear();},500);
+</script></body></html>
