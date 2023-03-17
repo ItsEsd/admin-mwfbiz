@@ -47,19 +47,20 @@
             document.getElementById("preview_quote").innerHTML += '<p>' + Quote.Quoteimi[j] + '</p>';
           }
         }document.getElementById("postgif").addEventListener("click", upgifsimi);
-        var obdm_miGifsUp = "https://script.google.com/macros/s/AKfycbwysdXDGl8b-JxE_HGJwHDjyF3C7mSMQ1idz0iVhmxs66hpogLqXmnXLV2sf8857ea-/exec";
+        var obdm_miGifsUp = "https://script.google.com/macros/s/AKfycbwjL1v87oGjqUNC1NaGP7h9ctKGHysZvXp8m3S5imUuLv9zZPWr9C7MFCZfFG_-hkE8/exec";
         function upgifsimi() {
           jQuery("connectUpGifs").empty();
           var upgifs = jQuery("#gifimi_json").val();
           var idpmv = jQuery("#idop").val();
+          var idpmn = jQuery('#usidobdmdef').val();
           if (upgifs != 0) {
-            var url = obdm_miGifsUp + "?callback=ctrlq&idop=" + idpmv + "&gifimi_json=" + upgifs + "&action=cdfgjdsfgjdsfyiuewkjrnjkfwe87494798247923rewrlewrf-sdfsdgfnsfdsjfy87wyrieuriwiruoer0wrehrnxhfskdfdsfdfsdfsf-ssnsfdsryw8reysecncnsuysifhcsdirywe8riuhkshfsdkfdsfds-fdcnfdfhdskfhiusdyfifhcsdfhiudsyfis";
+            var url = obdm_miGifsUp + "?callback=ctrlq&idop=" + idpmv + "&idmp=" + idpmn + "&gifimi_json=" + upgifs + "&action=cdfgjdsfgjdsfyiuewkjrnjkfwe87494798247923rewrlewrf-sdfsdgfnsfdsjfy87wyrieuriwiruoer0wrehrnxhfskdfdsfdfsdfsf-ssnsfdsryw8reysecncnsuysifhcsdirywe8riuhkshfsdkfdsfds-fdcnfdfhdskfhiusdyfifhcsdfhiudsyfis";
             var request = jQuery.ajax({
               crossDomain: true,
               url: url,
               method: "GET",
               dataType: "jsonp"
-            });
+            });console.log(url)
             document.getElementById("connectUpGifs").style.display = "block";
           } else {
             document.getElementById("connectUpGifs").style.display = "none";
@@ -69,13 +70,14 @@
           }, 2000);
         }
         document.getElementById("postq").addEventListener("click", upquotesimi);
-        var obdm_miQsUp = "https://script.google.com/macros/s/AKfycbwysdXDGl8b-JxE_HGJwHDjyF3C7mSMQ1idz0iVhmxs66hpogLqXmnXLV2sf8857ea-/exec";
+        var obdm_miQsUp = "https://script.google.com/macros/s/AKfycbwjL1v87oGjqUNC1NaGP7h9ctKGHysZvXp8m3S5imUuLv9zZPWr9C7MFCZfFG_-hkE8/exec";
         function upquotesimi() {
           jQuery("connectUpQuotes").empty();
           var upqs = jQuery("#quoteimi_json").val();
           var idpmv = jQuery("#idop").val();
+          var idpmn = jQuery('#usidobdmdef').val();
           if (upqs != 0) {
-            var url = obdm_miQsUp + "?callback=ctrlq&idop=" + idpmv + "&quoteimi_json=" + upqs + "&action=cdkjhdskfhdksfhfkrmderwuewrewr4468735983465o345243s4ed-sfdsfndsfchjfdsfdsnfgcdsfdsfsdfhsryroeyqwirweorihsfchifu874-ingfgfngduyfdgfngfdgifnygifdgfdgfdgdfgdg-nfshdfnsfhsdkfnhdshfxwryhfxnfhhfosr9wru9w-nscfhisdyfisdf";
+            var url = obdm_miQsUp + "?callback=ctrlq&idop=" + idpmv + "&idmp=" + idpmn +"&quoteimi_json=" + upqs + "&action=cdkjhdskfhdksfhfkrmderwuewrewr4468735983465o345243s4ed-sfdsfndsfchjfdsfdsnfgcdsfdsfsdfhsryroeyqwirweorihsfchifu874-ingfgfngduyfdgfngfdgifnygifdgfdgfdgdfgdg-nfshdfnsfhsdkfnhdshfxwryhfxnfhhfosr9wru9w-nscfhisdyfisdf";
             var request = jQuery.ajax({
               crossDomain: true,
               url: url,
@@ -102,13 +104,14 @@
             }
           });
         }document.getElementById("postn").addEventListener("click", upnewsimi);
-        var obdm_miNewsUp = "https://script.google.com/macros/s/AKfycbwysdXDGl8b-JxE_HGJwHDjyF3C7mSMQ1idz0iVhmxs66hpogLqXmnXLV2sf8857ea-/exec";
+        var obdm_miNewsUp = "https://script.google.com/macros/s/AKfycbwjL1v87oGjqUNC1NaGP7h9ctKGHysZvXp8m3S5imUuLv9zZPWr9C7MFCZfFG_-hkE8/exec";
         function upnewsimi() {
           document.getElementById("loader_n").style.visibility = "visible";
           var upnews = escape(jQuery("#iminews_json").val());
           var idpm = jQuery("#idop").val();
+          var idpmn = jQuery('#usidobdmdef').val();
           if (upnews != 0) {
-            var url = obdm_miNewsUp + "?callback=ctrlq&idop=" + idpm + "&iminews_json=" + upnews + "&action=chfjfshgjdsfhgdsjfgdsiwuerhker0weyrywirhefe-wryisudfhisudfnhcdfiushrnifhisdfcsdfsf-sfsdiugfncsddsgfndsniusynifnscydsfsdf-sdfynsifhdskfhiudhnfiudsfhisdfnsdfyhisdfhicsdfdsf-dsfnxsifhsdkfhndshfnsdchwyrwr";
+            var url = obdm_miNewsUp + "?callback=ctrlq&idop=" + idpm + "&idmp=" + idpmn +"&iminews_json=" + upnews + "&action=chfjfshgjdsfhgdsjfgdsiwuerhker0weyrywirhefe-wryisudfhisudfnhcdfiushrnifhisdfcsdfsf-sfsdiugfncsddsgfndsniusynifnscydsfsdf-sdfynsifhdskfhiudhnfiudsfhisdfnsdfyhisdfhicsdfdsf-dsfnxsifhsdkfhndshfnsdchwyrwr";
             var request = jQuery.ajax({
               crossDomain: true,
               url: url,
@@ -125,14 +128,15 @@
           }, 2000); 
         }
         function ctrlq() {}document.getElementById("postv").addEventListener("click", upvidsimi);
-        var obdm_miVidsUp = "https://script.google.com/macros/s/AKfycbwysdXDGl8b-JxE_HGJwHDjyF3C7mSMQ1idz0iVhmxs66hpogLqXmnXLV2sf8857ea-/exec";
+        var obdm_miVidsUp = "https://script.google.com/macros/s/AKfycbwjL1v87oGjqUNC1NaGP7h9ctKGHysZvXp8m3S5imUuLv9zZPWr9C7MFCZfFG_-hkE8/exec";
         function upvidsimi() {
           jQuery("connectUpVids").empty();
           var upvids = escape(jQuery("#youvid_json").val());
           var idpmv = jQuery("#idop").val();
+          var idpmn = jQuery('#usidobdmdef').val();
           document.getElementById("loader_v").style.visibility = "visible";
           if (upvids != 0) {
-            var url = obdm_miVidsUp + "?callback=ctrlq&idop=" + idpmv + "&youvid_json=" + upvids + "&action=cihkfkfjdhgfdgfdgfdghrrth4y784y4uwhekrerkeirkkdfdsf-fewry478ryesfhdgfjgdsjfgjsdfguy24yrewiyweryuwheksfsdf-we89rw8rishfjdsfgjsdgfdsgfdsfywrfghdfjjdfgfdhkgdfjgljkjfg-dgfdghjkdfhgjdfhgfdhgcnkfghdhdffdog-fdgcfknhfdgjhdfgcndfkghdfg";
+            var url = obdm_miVidsUp + "?callback=ctrlq&idop=" + idpmv +"&idmp=" + idpmn + "&youvid_json=" + upvids + "&action=cihkfkfjdhgfdgfdgfdghrrth4y784y4uwhekrerkeirkkdfdsf-fewry478ryesfhdgfjgdsjfgjsdfguy24yrewiyweryuwheksfsdf-we89rw8rishfjdsfgjsdgfdsgfdsfywrfghdfjjdfgfdhkgdfjgljkjfg-dgfdghjkdfhgjdfhgfdhgcnkfghdhdffdog-fdgcfknhfdgjhdfgcndfkghdfg";
             var request = jQuery.ajax({
               crossDomain: true,
               url: url,
