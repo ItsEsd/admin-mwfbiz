@@ -74,7 +74,7 @@ $(document).ready(function(){
   function monologuecon(){
   var mtobdmusd = $('#usidobdmdef').val();
     var ur1 = "https://script.google.com/macros/s/";
-    var ur2 = "AKfycbya6mMrGOM5UhgyD8If_5ZyUNq3vWN9bzpQqIGMiIF5Eqq1MF0XywDtom8LV1W67L-dHw";
+    var ur2 = "AKfycbz76bl9TsFeUNPw-DwRieAzEj4DLLewIhEVJY4aglmZRk7grRokqR65r1wd9XpvPdDfxg";
     var urdm = ur1 + ur2 + "/exec";
     var url = urdm + "?callback=chobdm&usid=" + mtobdmusd +"&action=chobdm";
     var request = jQuery.ajax({
@@ -83,7 +83,6 @@ $(document).ready(function(){
       method: "GET",
       dataType: "jsonp"
     });
-  
   }
   
   function chobdm(e){
@@ -118,6 +117,31 @@ $(document).ready(function(){
     $('#updatemotoreg').show(); 
     $('#updateobdm').hide();
   });
+  function setnewmotto(){
+    var mtpicthumb = $('#mottothumb').val();
+    var mtmotto = escape($('#mottoobdm').val());
+    var mtdescp = $('#mottocondescp').val();
+    var mtobdmk = escape($('#confirmobdmkey').val());
+    var mtobdmusd = $('#usidobdmdef').val();
+    var obdmstr =escape(String(mtpicthumb +"{biz}"+mtmotto +"{biz}"+mtdescp +"{biz}"+mtobdmk)) ;
+    if(mtpicthumb !='' && mtmotto!='' && mtdescp!='' && mtobdmk!=''){
+      var ur1 = "https://script.google.com/macros/s/";
+          var ur2 = "AKfycbz76bl9TsFeUNPw-DwRieAzEj4DLLewIhEVJY4aglmZRk7grRokqR65r1wd9XpvPdDfxg";
+          var urdm = ur1 + ur2 + "/exec";
+          var url = urdm + "?callback=upobdmre&motto=" + obdmstr + "&obpass=" + mtobdmk +  "&mottotitle=" + mtmotto +  "&usid=" + mtobdmusd +"&action=inobdm";
+          var request = jQuery.ajax({
+            crossDomain: true,
+            url: url,
+            method: "GET",
+            dataType: "jsonp"
+          });
+          document.getElementById('updatemotoreg').disabled = true;
+    }
+    else{
+      document.getElementById('updatemotoreg').disabled = true;
+      return false;
+    }
+  }
   document.getElementById('updatemotoreg').addEventListener('click',updateobdm);
   function updateobdm(){
     var mtpicthumb = $('#mottothumb').val();
@@ -128,7 +152,7 @@ $(document).ready(function(){
   var obdmstr =escape(String(mtpicthumb +"{biz}"+mtmotto +"{biz}"+mtdescp +"{biz}"+mtobdmk)) ;
   if(mtpicthumb !='' && mtmotto!='' && mtdescp!='' && mtobdmk!=''){
     var ur1 = "https://script.google.com/macros/s/";
-        var ur2 = "AKfycbya6mMrGOM5UhgyD8If_5ZyUNq3vWN9bzpQqIGMiIF5Eqq1MF0XywDtom8LV1W67L-dHw";
+        var ur2 = "AKfycbz76bl9TsFeUNPw-DwRieAzEj4DLLewIhEVJY4aglmZRk7grRokqR65r1wd9XpvPdDfxg";
         var urdm = ur1 + ur2 + "/exec";
         var url = urdm + "?callback=upobdmre&motto=" + obdmstr + "&obpass=" + mtobdmk +  "&mottotitle=" + mtmotto +  "&usid=" + mtobdmusd +"&action=upobdm";
         var request = jQuery.ajax({
