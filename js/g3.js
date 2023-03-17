@@ -171,13 +171,12 @@ $(document).ready(function(){
   
   function upobdmre(e){
     var res = e.result;
-   // document.getElementById('coneditmotto').innerHTML=`<p onclick="document.getElementById('coneditmotto').innerHTML='';">Description..</p>`;
-    $('#updateobdm').show();
+    $('#updateobdm').show();monologuecon();
     document.getElementById('continuemotoreg').disabled = false;
     document.getElementById('updatemotoreg').disabled = false;
     document.getElementById('mottoupdatd').style.display = "block";
     document.getElementById('mottoupdatd').style.zIndex = "400";
-    document.getElementById('mottoupdatd').innerHTML ="Motto Updated!"
+    document.getElementById('mottoupdatd').innerHTML ="Motto Updated!";
     setTimeout(function(){
       document.getElementById('mottoupdatd').style.display = "none";},6000);
     show_wall(locksee);
