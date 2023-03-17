@@ -118,6 +118,7 @@ $(document).ready(function(){
     $('#updateobdm').hide();
   });
   function setnewmotto(){
+    document.getElementById('continuemotoreg').disabled = true;
     var mtpicthumb = $('#mottothumb').val();
     var mtmotto = escape($('#mottoobdm').val());
     var mtdescp = $('#mottocondescp').val();
