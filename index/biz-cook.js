@@ -44,7 +44,7 @@ function getCookie(cname) {
       var cookstr = ca[i].split(name);
       var cook = cookstr[1].split(".");
       var paem = window.atob(cook[1]);
-      document.getElementById('usidobdmdef').value= paem;
+      document.getElementById('usidobdmdef').value=paem;
       return c.substring(name.length, c.length); } 
     } return ""; 
   } 
@@ -68,7 +68,6 @@ function getCookie(cname) {
               document.getElementById('sigcontainer').style.display = "none"; 
             }
         } }
-       // userCookie();
         } 
         else if(usergu != "" || userel != "" || userm != ""){
           notvalidusr();
