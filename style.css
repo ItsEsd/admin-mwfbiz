@@ -936,5 +936,16 @@ color: #161616;
   font-size: 14px;
   border:0px;
   width:100%;
+  padding:4px;
   border-radius: 5px;
+}
+#rstrctelt{
+  border:0px;
+  width:100%;
+  padding:4px;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: #dd1d16;
+  color:#ffffffc4;
+  margin-top:5px;
 }
