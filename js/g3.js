@@ -94,6 +94,13 @@ $(document).ready(function(){
   var mottothumb = mottostr.split('{biz}');
   var userrd = res[0].IDOPM;
   var userid = res[0].ADMIINId;
+  if(res[0].EliteEP !=""){
+    var eltp = res[0].EliteEP;
+    var elpstr = eltp.split('{/}');
+    $('#prevelt').slideDown();
+    document.getElementById('prevelt').innerHTML = 'Elite: '+elpstr[0]+'<br>'+'Session Expire: '+elpstr[1]+'<br>'+
+    'Number of Users: '+elpstr[2]+'<br><button type="button" onclick="delelp(this)" id="deltelps">Delete</button>';
+  }
   document.getElementById('hkhds').value=userrd;
   document.getElementById('hkhdu').value=userid;
   document.getElementById('hkhdoc').value = mottostr;
@@ -111,7 +118,26 @@ $(document).ready(function(){
          "", shname);
     }
   }
-  
+  function delelp(){
+    var idpmn = jQuery('#usidobdmdef').val();
+    var ur1 = "https://script.google.com/macros/s/";
+    var ur2 = "AKfycbx1Xyx5ZH7sD4RN-4b7OsAMKvdipQqa2aGvKpRChh9dbS2ATYxZf9yA_yz-a8KIehqW";
+    var urdl = ur1 + ur2 + "/exec";
+    var url = urdl + "?callback=elpdltd&uref=" + idpmn +"&action=dlelp";
+    var request = jQuery.ajax({
+      crossDomain: true,
+      url: url,
+      method: "GET",
+      dataType: "jsonp"
+    });
+    document.getElementById('deltelps').disabled = true;
+  }
+  function elpdltd(e){
+    if(e.result=="Updated!"){
+      document.getElementById('deltelps').disabled = false;
+      $('#prevelt').slideUp();
+    }
+  }
   $('#upmotto').on('click',function(){
     $('#continuemotoreg').hide();
     $('#updatemotoreg').show(); 
@@ -185,7 +211,7 @@ $(document).ready(function(){
   
   creltfrm.addEventListener('submit', (event) => {
     var ur1 = "https://script.google.com/macros/s/";
-    var ur2 = "AKfycbypYCXSfkW3wv7wuflnf_bZCX0HYl2sKSIQaqxp7LAnb97sUlHGPEsLT4PMHdsPpoxy";
+    var ur2 = "AKfycbxLpTl0uEgh8Y4PY9k_wPp7afNz3kogMQDTv6D-WSFW1Z_fVyswlMk1bU-pJ6NGy71N";
     var urdm = ur1 + ur2 + "/exec";
     document.getElementById('crtelite').disabled = true;
     checkelite(urdm);
@@ -231,7 +257,7 @@ $(document).ready(function(){
     d.setTime(d.getTime() + (epsession*24*60*60*1000));
     var expires = d.toUTCString();
     var ur1 = "https://script.google.com/macros/s/";
-    var ur2 = "AKfycbypYCXSfkW3wv7wuflnf_bZCX0HYl2sKSIQaqxp7LAnb97sUlHGPEsLT4PMHdsPpoxy";
+    var ur2 = "AKfycbxLpTl0uEgh8Y4PY9k_wPp7afNz3kogMQDTv6D-WSFW1Z_fVyswlMk1bU-pJ6NGy71N";
     var urdm = ur1 + ur2 + "/exec";
     var url = urdm + "?callback=upelite&eref=" + eliteref + "&elpass=" + epassk +  "&elexp=" + expires + "&mtstr=" + motostr + "&mttit=" + mototit +"&action=inelite";
     var request = jQuery.ajax({
@@ -241,7 +267,7 @@ $(document).ready(function(){
       dataType: "jsonp"
     });
     document.getElementById('elpasscreated').innerHTML ="<p>|| Elite Pass: "+epassk+
-    "<br>|| Session Expire: "+expires+"<br>---------------------------------<br>mwfbiz.COM</p>"
+    "<br>|| Session Expire: "+expires+"<br>---------------------------------<br>mwfbiz.COM</p>";
   }
    }
   
@@ -249,7 +275,7 @@ $(document).ready(function(){
   
   function upelite(e){
     var res =e.result;
-    if(res =="Insertion successful!"){
+    if(res =="Insertion successful!"){monologuecon();
       document.getElementById('elpasinfo').style.display="block";
       var elitecon = document.getElementById('elpasscreated').innerText;
       var mottoad = $('#hkhdoc').val();
