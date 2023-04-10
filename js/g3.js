@@ -127,7 +127,7 @@ $(document).ready(function(){
   function delelp(){
     var idpmn = jQuery('#usidobdmdef').val();
     var ur1 = "https://script.google.com/macros/s/";
-    var ur2 = "AKfycbzKf_ZHc0luj5W_lM3PH-C9bIqg2mp-lDsuEw4DWHyhYY3_S4m4gT1hxR0g82TewAr5";
+    var ur2 = "AKfycby59O3NziXWUq9AJDGLRfDguntSwnyWR7W5TVufg8kiWq_iznvKclD9ITDGCq3rr6rc";
     var urdl = ur1 + ur2 + "/exec";
     var url = urdl + "?callback=elpdltd&uref=" + idpmn +"&action=dlelp";
     var request = jQuery.ajax({
@@ -152,7 +152,7 @@ function restrctelp(){
    refres = "NA";}
   var idpmn = jQuery('#usidobdmdef').val();
     var ur1 = "https://script.google.com/macros/s/";
-    var ur2 = "AKfycbzKf_ZHc0luj5W_lM3PH-C9bIqg2mp-lDsuEw4DWHyhYY3_S4m4gT1hxR0g82TewAr5";
+    var ur2 = "AKfycby59O3NziXWUq9AJDGLRfDguntSwnyWR7W5TVufg8kiWq_iznvKclD9ITDGCq3rr6rc";
     var urdl = ur1 + ur2 + "/exec";
     var url = urdl + "?callback=elprstct&uref=" + idpmn +"&ref="+refres+"&action=reslp";
     var request = jQuery.ajax({
