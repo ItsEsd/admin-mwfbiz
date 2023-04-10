@@ -923,3 +923,18 @@ color: #161616;
   border-radius: 5px;
   display: none;
 }
+
+#prevelt{
+  display: none;
+  background-color: #242424;
+  font-size:14px;
+  padding:10px;
+  border-radius: 10px;
+}
+#deltelps{
+  margin-top:5px;
+  font-size: 14px;
+  border:0px;
+  width:100%;
+  border-radius: 5px;
+}
