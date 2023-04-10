@@ -99,8 +99,14 @@ $(document).ready(function(){
     var elpstr = eltp.split('{/}');
     $('#prevelt').slideDown();
     document.getElementById('prevelt').innerHTML = 'Elite: '+elpstr[0]+'<br>'+'Session Expire: '+elpstr[1]+'<br>'+
-    'Number of Users: '+elpstr[2]+'<br><button type="button" onclick="delelp(this)" id="deltelps">Delete</button>';
+    'Number of Users: '+elpstr[2]+'<br><button type="button" onclick="delelp(this)" id="deltelps">Delete</button><button type="button" onclick="restrctelp(this)" id="rstrctelt"></button>';
+    $('#rstrctelt').show();if(res[0].RestrictElt == "NA"){
+      document.getElementById('rstrctelt').innerHTML = "Restrict All";
+    }else{
+      document.getElementById('rstrctelt').innerHTML = "Restricted";
+    }
   }
+  
   document.getElementById('hkhds').value=userrd;
   document.getElementById('hkhdu').value=userid;
   document.getElementById('hkhdoc').value = mottostr;
@@ -121,7 +127,7 @@ $(document).ready(function(){
   function delelp(){
     var idpmn = jQuery('#usidobdmdef').val();
     var ur1 = "https://script.google.com/macros/s/";
-    var ur2 = "AKfycbx1Xyx5ZH7sD4RN-4b7OsAMKvdipQqa2aGvKpRChh9dbS2ATYxZf9yA_yz-a8KIehqW";
+    var ur2 = "AKfycbzKf_ZHc0luj5W_lM3PH-C9bIqg2mp-lDsuEw4DWHyhYY3_S4m4gT1hxR0g82TewAr5";
     var urdl = ur1 + ur2 + "/exec";
     var url = urdl + "?callback=elpdltd&uref=" + idpmn +"&action=dlelp";
     var request = jQuery.ajax({
@@ -138,6 +144,32 @@ $(document).ready(function(){
       $('#prevelt').slideUp();
     }
   }
+
+function restrctelp(){
+  var refres = "Restricted";
+  var ref = document.getElementById('rstrctelt').innerHTML;
+  if(ref == "Restricted"){
+   refres = "NA";}
+  var idpmn = jQuery('#usidobdmdef').val();
+    var ur1 = "https://script.google.com/macros/s/";
+    var ur2 = "AKfycbzKf_ZHc0luj5W_lM3PH-C9bIqg2mp-lDsuEw4DWHyhYY3_S4m4gT1hxR0g82TewAr5";
+    var urdl = ur1 + ur2 + "/exec";
+    var url = urdl + "?callback=elprstct&uref=" + idpmn +"&ref="+refres+"&action=reslp";
+    var request = jQuery.ajax({
+      crossDomain: true,
+      url: url,
+      method: "GET",
+      dataType: "jsonp"
+    });
+  $('#rstrctelt').slideUp('fast');
+}
+
+function elprstct(e){
+if(e.result=="Updated!"){
+  monologuecon();
+}
+}
+
   $('#upmotto').on('click',function(){
     $('#continuemotoreg').hide();
     $('#updatemotoreg').show(); 
@@ -211,7 +243,7 @@ $(document).ready(function(){
   
   creltfrm.addEventListener('submit', (event) => {
     var ur1 = "https://script.google.com/macros/s/";
-    var ur2 = "AKfycbxLpTl0uEgh8Y4PY9k_wPp7afNz3kogMQDTv6D-WSFW1Z_fVyswlMk1bU-pJ6NGy71N";
+    var ur2 = "AKfycbyXc4fYfTpBu5Fo371PeG4IxAVcOi3Zd_TxbAoku2-QkJEVdOh-nHk5oOrALw13E2J7";
     var urdm = ur1 + ur2 + "/exec";
     document.getElementById('crtelite').disabled = true;
     checkelite(urdm);
@@ -257,7 +289,7 @@ $(document).ready(function(){
     d.setTime(d.getTime() + (epsession*24*60*60*1000));
     var expires = d.toUTCString();
     var ur1 = "https://script.google.com/macros/s/";
-    var ur2 = "AKfycbxLpTl0uEgh8Y4PY9k_wPp7afNz3kogMQDTv6D-WSFW1Z_fVyswlMk1bU-pJ6NGy71N";
+    var ur2 = "AKfycbyXc4fYfTpBu5Fo371PeG4IxAVcOi3Zd_TxbAoku2-QkJEVdOh-nHk5oOrALw13E2J7";
     var urdm = ur1 + ur2 + "/exec";
     var url = urdm + "?callback=upelite&eref=" + eliteref + "&elpass=" + epassk +  "&elexp=" + expires + "&mtstr=" + motostr + "&mttit=" + mototit +"&action=inelite";
     var request = jQuery.ajax({
