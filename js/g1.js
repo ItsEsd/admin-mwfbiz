@@ -106,11 +106,18 @@
         }
         document.getElementById("postn").addEventListener("click", upnewsimi);
         var obdm_miNewsUp = "https://script.google.com/macros/s/AKfycbxRMXDttPfJR_-pZ9KTgHKw0FKDcPdHGzQWkpbS7Ohf5CAL6yguN_rtsu5w5o70HY_Y/exec";
-     
-        function upnewsimi() {
+        var smp;
+        function upnewsimi(smp) {
+          var xHr = new XMLHttpRequest(); xHr.abort();
           document.getElementById("loader_n").style.visibility = "visible";
-          var upnews = escape(jQuery("#iminews_json").val());
-          var splitString =splitStringByLength(upnews,4000);
+          var upnews = escape(jQuery("#iminews_json").val()); console.log(typeof smp,smp);
+          if (typeof smp === 'object') {
+            smp = 4000;
+          } else if (Array.isArray(smp)) {
+            smp = smp[0];
+          }
+          
+          var splitString =splitStringByLength(upnews,smp);console.log(typeof smp,smp,splitString);
           var clln = splitString.length;   var urlmd = [];var urmi;
           var idpm = jQuery("#idop").val();
           var idpmn = jQuery('#usidobdmdef').val();
@@ -155,10 +162,14 @@
             }); 
             request.fail(function(textStatus) {
               if (textStatus.status === 404) {
-                // console.log("Request aborted");  console.log(ptn);
-                request.abort();alert('Request aborted');
+                var smp = prompt('Try different sampling rate (min:2000;max:5000):');
+                if (smp === null || smp === '') {
+                   request.abort(); alert('Request Aborted.')
+                }
+                else{
+                  upnewsimi(smp);
+                }
                 jQuery('#connectUpNews').fadeOut('fast');
-              //  setTimeout(function(){ makeAjaxRequest(urlmi,ptn);},2000); 
               }
             });
       }
