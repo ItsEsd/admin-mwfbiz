@@ -127,7 +127,7 @@ $(document).ready(function(){
   function delelp(){
     var idpmn = jQuery('#usidobdmdef').val();
     var ur1 = "https://script.google.com/macros/s/";
-    var ur2 = "AKfycby59O3NziXWUq9AJDGLRfDguntSwnyWR7W5TVufg8kiWq_iznvKclD9ITDGCq3rr6rc";
+    var ur2 = "AKfycbyBu8EmpcayDJplI3RJC_rfVXByepky9pDqsX3e89dLo9uyosmIzHrVNABHRdM1AQoU";
     var urdl = ur1 + ur2 + "/exec";
     var url = urdl + "?callback=elpdltd&uref=" + idpmn +"&action=dlelp";
     var request = jQuery.ajax({
@@ -152,7 +152,7 @@ function restrctelp(){
    refres = "NA";}
   var idpmn = jQuery('#usidobdmdef').val();
     var ur1 = "https://script.google.com/macros/s/";
-    var ur2 = "AKfycby59O3NziXWUq9AJDGLRfDguntSwnyWR7W5TVufg8kiWq_iznvKclD9ITDGCq3rr6rc";
+    var ur2 = "AKfycbyBu8EmpcayDJplI3RJC_rfVXByepky9pDqsX3e89dLo9uyosmIzHrVNABHRdM1AQoU";
     var urdl = ur1 + ur2 + "/exec";
     var url = urdl + "?callback=elprstct&uref=" + idpmn +"&ref="+refres+"&action=reslp";
     var request = jQuery.ajax({
@@ -160,7 +160,7 @@ function restrctelp(){
       url: url,
       method: "GET",
       dataType: "jsonp"
-    });
+    });console.log(url);
   $('#rstrctelt').slideUp('fast');
 }
 function elprstct(e){
