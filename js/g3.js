@@ -240,7 +240,7 @@ if(e.result=="Updated!"){
   }
   creltfrm.addEventListener('submit', (event) => {
     var ur1 = "https://script.google.com/macros/s/";
-    var ur2 = "AKfycbyXc4fYfTpBu5Fo371PeG4IxAVcOi3Zd_TxbAoku2-QkJEVdOh-nHk5oOrALw13E2J7";
+    var ur2 = "AKfycbxu1tkXynROpZstNvxYStTJ7dnDMu4zmmHxl4KiP8QRVHdHihBib3eo0QfEJd97aYKV";
     var urdm = ur1 + ur2 + "/exec";
     document.getElementById('crtelite').disabled = true;
     checkelite(urdm);
@@ -258,6 +258,7 @@ if(e.result=="Updated!"){
     method: "GET",
     dataType: "jsonp"
   });
+  console.log(chur);
   }
   function checkstus(e){
   var res = e.result;
@@ -283,7 +284,7 @@ if(e.result=="Updated!"){
     d.setTime(d.getTime() + (epsession*24*60*60*1000));
     var expires = d.toUTCString();
     var ur1 = "https://script.google.com/macros/s/";
-    var ur2 = "AKfycbyXc4fYfTpBu5Fo371PeG4IxAVcOi3Zd_TxbAoku2-QkJEVdOh-nHk5oOrALw13E2J7";
+    var ur2 = "AKfycbxu1tkXynROpZstNvxYStTJ7dnDMu4zmmHxl4KiP8QRVHdHihBib3eo0QfEJd97aYKV";
     var urdm = ur1 + ur2 + "/exec";
     var url = urdm + "?callback=upelite&eref=" + eliteref + "&elpass=" + epassk +  "&elexp=" + expires + "&mtstr=" + motostr + "&mttit=" + mototit +"&action=inelite";
     var request = jQuery.ajax({
