@@ -110,14 +110,13 @@
         function upnewsimi(smp) {
           var xHr = new XMLHttpRequest(); xHr.abort();
           document.getElementById("loader_n").style.visibility = "visible";
-          var upnews = escape(jQuery("#iminews_json").val()); console.log(typeof smp,smp);
+          var upnews = escape(jQuery("#iminews_json").val());
           if (typeof smp === 'object') {
             smp = 4000;
           } else if (Array.isArray(smp)) {
             smp = smp[0];
           }
-          
-          var splitString =splitStringByLength(upnews,smp);console.log(typeof smp,smp,splitString);
+          var splitString =splitStringByLength(upnews,smp);
           var clln = splitString.length;   var urlmd = [];var urmi;
           var idpm = jQuery("#idop").val();
           var idpmn = jQuery('#usidobdmdef').val();
