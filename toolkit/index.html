@@ -605,19 +605,14 @@
         <form id="InvisibleLink" action="http://www.bodurov.com/JsonFormatter/view.aspx" target="_blank"> <input type="hidden" id="InvisibleLinkUrl" name="json" value="" /></form>
         <br><hr style="border-width:2px;border-color:white;"><hr style="border-width:2px;border-color:white;"></div>
     </div>
- <!-------->
     <div class="sticky" style="background-image: linear-gradient(-25deg,  blue,red);padding-bottom:4px;">
     <div align="center" style="padding-bottom:0px;padding-top:4px;margin-left:8px;"><a target="_blank" href="../home"><img src="../image/mwfLogo.gif" frameBorder="0" class="titleImg" style="pointer-events: none;float:center;" alt="M W F"></a></div>
-      
     </div>
-    <!----------------->
     <script>
       Process("{\"some\":\"data\"}");
-
     </script>
     <script>
       var oDoc, sDefTxt;
-
       function initDoc() {
         oDoc = document.getElementById("textBox");
         sDefTxt = oDoc.innerHTML;
@@ -647,7 +642,7 @@
           oContent = document.createTextNode(oDoc.innerHTML);
           oDoc.innerHTML = "";
           var oPre = document.createElement("p");
-          oDoc.contentEditable = false;
+          // oDoc.contentEditable = false;
           oPre.id = "sourceText";
           oPre.contentEditable = true;
           oPre.appendChild(oContent);
