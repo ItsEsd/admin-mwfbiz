@@ -129,12 +129,12 @@
            makeAjaxRequest(urlmd,0);
            var element = document.getElementById('genstrngary');
             if (element !== null) {
-              element.value= JSON.stringify(urlmd);
+              element.value= encodeURIComponent(JSON.stringify(urlmd));
             }
             else{
               var elem = document.createElement('input');
               elem.id='genstrngary';elem.value="";
-              elem.value = JSON.stringify(urlmd);
+              elem.value = encodeURIComponent(JSON.stringify(urlmd));
               elem.style.display = 'none';
             }
            $('body').append(elem);
@@ -364,7 +364,7 @@
         };
         jQuery(function() {
           jQuery('form[id="imi_news"]').submit(function() {
-            document.getElementById("iminews_json").value = JSON.stringify(jQuery('form[id="imi_news"]').serializeObject());
+            document.getElementById("iminews_json").value = encodeURIComponent(JSON.stringify(jQuery('form[id="imi_news"]').serializeObject()));
             var k ;
             k= $('#iminews_json').val();
           //  console.log(k.length);
@@ -381,7 +381,7 @@
         });
         jQuery(function() {
           jQuery('form[id="imivid"]').submit(function() {
-            document.getElementById("youvid_json").value = JSON.stringify(jQuery('form[id="imivid"]').serializeObject());
+            document.getElementById("youvid_json").value = encodeURIComponent(JSON.stringify(jQuery('form[id="imivid"]').serializeObject()));
             var k ;
             k= $('#youvid_json').val();
          //   console.log(k.length);
@@ -398,7 +398,7 @@
         });
         jQuery(function() {
           jQuery('form[id="gif_edit"]').submit(function() {
-            document.getElementById("gifimi_json").value = JSON.stringify(jQuery('form[id="gif_edit"]').serializeObject());
+            document.getElementById("gifimi_json").value = encodeURIComponent(JSON.stringify(jQuery('form[id="gif_edit"]').serializeObject()));
             document.getElementById("pregif").disabled = false;
             document.getElementById("postgif").disabled = false;
             var k ;
@@ -415,7 +415,7 @@
         });
         jQuery(function() {
           jQuery('form[id="quote_edit"]').submit(function() {
-            document.getElementById("quoteimi_json").value = JSON.stringify(jQuery('form[id="quote_edit"]').serializeObject());
+            document.getElementById("quoteimi_json").value = encodeURIComponent(JSON.stringify(jQuery('form[id="quote_edit"]').serializeObject()));
             document.getElementById("prequote").disabled = false;
             document.getElementById("postq").disabled = false;
             var k ;
