@@ -111,7 +111,7 @@ $(document).ready(function(){
   document.getElementById('hkhdu').value=userid;
   document.getElementById('hkhdoc').value = mottostr;
   document.getElementById('mottostr').value = mottostr;
-  document.getElementById('mottoobdm').value = unescape(mottotit);
+  document.getElementById('mottoobdm').value = decodeURIComponent(mottotit);
   document.getElementById('mottothumb').value = mottothumb[0];
   document.getElementById('mottothumbpicpost').src = mottothumb[0];
   document.getElementById('coneditmotto').innerHTML = mottothumb[2];
@@ -176,11 +176,11 @@ if(e.result=="Updated!"){
   function setnewmotto(){
     document.getElementById('continuemotoreg').disabled = true;
     var mtpicthumb = $('#mottothumb').val();
-    var mtmotto = escape($('#mottoobdm').val());
+    var mtmotto = encodeURIComponent($('#mottoobdm').val());
     var mtdescp = $('#mottocondescp').val();
-    var mtobdmk = escape($('#confirmobdmkey').val());
+    var mtobdmk = encodeURIComponent($('#confirmobdmkey').val());
     var mtobdmusd = $('#usidobdmdef').val();
-    var obdmstr =escape(String(mtpicthumb +"{biz}"+mtmotto +"{biz}"+mtdescp +"{biz}"+mtobdmk)) ;
+    var obdmstr =encodeURIComponent(String(mtpicthumb +"{biz}"+mtmotto +"{biz}"+mtdescp +"{biz}"+mtobdmk)) ;
     if(mtpicthumb !='' && mtmotto!='' && mtdescp!='' && mtobdmk!=''){
       var ur1 = "https://script.google.com/macros/s/";
           var ur2 = "AKfycbz76bl9TsFeUNPw-DwRieAzEj4DLLewIhEVJY4aglmZRk7grRokqR65r1wd9XpvPdDfxg";
@@ -202,11 +202,11 @@ if(e.result=="Updated!"){
   document.getElementById('updatemotoreg').addEventListener('click',updateobdm);
   function updateobdm(){
     var mtpicthumb = $('#mottothumb').val();
-  var mtmotto = escape($('#mottoobdm').val());
+  var mtmotto = encodeURIComponent($('#mottoobdm').val());
   var mtdescp = $('#mottocondescp').val();
-  var mtobdmk = escape($('#confirmobdmkey').val());
+  var mtobdmk = encodeURIComponent($('#confirmobdmkey').val());
   var mtobdmusd = $('#usidobdmdef').val();
-  var obdmstr =escape(String(mtpicthumb +"{biz}"+mtmotto +"{biz}"+mtdescp +"{biz}"+mtobdmk)) ;
+  var obdmstr =encodeURIComponent(String(mtpicthumb +"{biz}"+mtmotto +"{biz}"+mtdescp +"{biz}"+mtobdmk)) ;
   if(mtpicthumb !='' && mtmotto!='' && mtdescp!='' && mtobdmk!=''){
     var ur1 = "https://script.google.com/macros/s/";
         var ur2 = "AKfycbz76bl9TsFeUNPw-DwRieAzEj4DLLewIhEVJY4aglmZRk7grRokqR65r1wd9XpvPdDfxg";
@@ -278,7 +278,7 @@ if(e.result=="Updated!"){
     var epsession = $('#sessionexp').val();
     var epassk = String(ep1+ep2+ep3+ep4).toLocaleUpperCase();
     var eliteref = $('#usidobdmdef').val();
-    var motostr = escape($('#mottostr').val());
+    var motostr = encodeURIComponent($('#mottostr').val());
     var mototit = $('#mottotit').val();
     var d = new Date();
     d.setTime(d.getTime() + (epsession*24*60*60*1000));
