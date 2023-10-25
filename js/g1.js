@@ -110,7 +110,7 @@
         function upnewsimi(smp) {
           var xHr = new XMLHttpRequest(); xHr.abort();
           document.getElementById("loader_n").style.visibility = "visible";
-          var upnews = escape(jQuery("#iminews_json").val());
+          var upnews = encodeURIComponent(jQuery("#iminews_json").val());
           if (typeof smp === 'object') {
             smp = 4000;
           } else if (Array.isArray(smp)) {
@@ -176,7 +176,7 @@
         function ctrlq(e) {
           var upsts = e.result.split('/');
           var arrystng = [];
-          arrystng = JSON.parse(document.getElementById('genstrngary').value);
+          arrystng = JSON.parse(decodeURIComponent(document.getElementById('genstrngary').value));
           var flln= arrystng.length;
           if(upsts[0]==='updated'){
             var upvl = parseInt(upsts[1]); 
@@ -197,7 +197,7 @@
         var obdm_miVidsUp = "https://script.google.com/macros/s/AKfycbxRMXDttPfJR_-pZ9KTgHKw0FKDcPdHGzQWkpbS7Ohf5CAL6yguN_rtsu5w5o70HY_Y/exec";
         function upvidsimi() {
           jQuery("connectUpVids").empty();
-          var upvids = escape(jQuery("#youvid_json").val());
+          var upvids = encodeURIComponent(jQuery("#youvid_json").val());
           var idpmv = jQuery("#idop").val();
           var idpmn = jQuery('#usidobdmdef').val();
           document.getElementById("loader_v").style.visibility = "visible";
@@ -364,7 +364,7 @@
         };
         jQuery(function() {
           jQuery('form[id="imi_news"]').submit(function() {
-            document.getElementById("iminews_json").value = encodeURIComponent(JSON.stringify(jQuery('form[id="imi_news"]').serializeObject()));
+            document.getElementById("iminews_json").value = (JSON.stringify(jQuery('form[id="imi_news"]').serializeObject()));
             var k ;
             k= $('#iminews_json').val();
           //  console.log(k.length);
@@ -381,7 +381,7 @@
         });
         jQuery(function() {
           jQuery('form[id="imivid"]').submit(function() {
-            document.getElementById("youvid_json").value = encodeURIComponent(JSON.stringify(jQuery('form[id="imivid"]').serializeObject()));
+            document.getElementById("youvid_json").value = (JSON.stringify(jQuery('form[id="imivid"]').serializeObject()));
             var k ;
             k= $('#youvid_json').val();
          //   console.log(k.length);
@@ -398,12 +398,11 @@
         });
         jQuery(function() {
           jQuery('form[id="gif_edit"]').submit(function() {
-            document.getElementById("gifimi_json").value = encodeURIComponent(JSON.stringify(jQuery('form[id="gif_edit"]').serializeObject()));
+            document.getElementById("gifimi_json").value = (JSON.stringify(jQuery('form[id="gif_edit"]').serializeObject()));
             document.getElementById("pregif").disabled = false;
             document.getElementById("postgif").disabled = false;
             var k ;
             k= $('#gifimi_json').val();
-          //  console.log(k.length);
             if(k.length >= 4000){
               document.getElementById('notifycharlimit').style.display = 'block';
             }
@@ -415,12 +414,11 @@
         });
         jQuery(function() {
           jQuery('form[id="quote_edit"]').submit(function() {
-            document.getElementById("quoteimi_json").value = encodeURIComponent(JSON.stringify(jQuery('form[id="quote_edit"]').serializeObject()));
+            document.getElementById("quoteimi_json").value = (JSON.stringify(jQuery('form[id="quote_edit"]').serializeObject()));
             document.getElementById("prequote").disabled = false;
             document.getElementById("postq").disabled = false;
             var k ;
             k= $('#quoteimi_json').val();
-           // console.log(k.length);
             if(k.length >= 4000){
               document.getElementById('notifycharlimit').style.display = 'block';
             }
@@ -452,51 +450,6 @@
             method: "GET",
             dataType: "jsonp"
           });
-/*
-          var url = obdm_mi + "?action=chkdfhemoeorouiriheuiorr-w66iho87hmfosduofjsmdof94y5-rcinrerciebwr2p4097423newchrwerieirewr-rncwe ewgrieg rcgierwiewrniewriebwrewr-47nicenribeeiryn9eywcrewhrybewyrwerowecr-husdgfyudtfsjfnuhfdsff4343edsfdsf-wekhcnfiuy8y7934hncfiusdyfisncibuyrbunikbgsdifnlnfsdf-4378ihnerbiuergweryw";
-          
-          jQuery.getJSON(url, function(json) {
-           // console.log(json);
-            for(var od=0; od<=json.records.length;od++){
-              if(obdmid == json.records[od].IDOPM){
-
-            var g = Math.floor((Math.random() * 6) + 1);
-            var gifts = JSON.parse(json.records[od].GIFGifts);
-            for (prop in json.records[g]) {
-              document.getElementById("GIF2").innerHTML = '<img frameborder="0" width="80%" style="max-width:500px;border-radius:4px;" src="' + gifts.GIFimi[g] + '">';
-            }
-            var k, m;
-            var VID = JSON.parse(json.records[od].YouVid);
-            var k = VID.imiYouVid.length;
-            for (m = 0; m < k; m++) {
-              var link = VID.imiYouVid[m];
-              var vidid = getId(link);
-              document.getElementById("YoutubeOne").innerHTML += '<div class="iteam"><div class="embed-responsive embed-responsive-16by9"><iframe width="100%"class="embed-responsive-item" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; autoplay ;picture-in-picture" allowfullscreen src="//www.youtube.com/embed/' + vidid + '" frameborder="0" allowfullscreen></iframe></div></div>';
-            }
-            var s, j;
-            var news = JSON.parse(json.records[od].imiNews);
-            var s = news.newsTitle.length;
-            for (var prop in news.newsTitle) {
-              //document.getElementById("News1").innerHTML = '<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="10000"> <div class="carousel-inner"> <div class="carousel-item active"> <div class="container newz"> <div class="iteam-news"> <div class="wrapTODPre card"><a target="_blank" href="' + news.newsLink[0] + '"> <img class="card-img-top cardImg" src="' + news.newsThumb[0] + '"> <div class="card-body bg-light text-dark "> <h4>' + news.newsTitle[0] + '</h4> </div> </a> <div class=" bg-danger text-white" style="text-align:left;"> <p>' + news.conTitle1[0] + '<a target="_blank" class="readmore" href="' + news.conLink1[0] + '">' + news.conSiteName1[0] + '</a> </p> <hr> <p>' + news.conTitle2[0] + '<a target="_blank" class="readmore" href="' + news.conLink2[0] + '">' + news.conSiteName2[0] + '</a></p> </div> </div> </div> </div> </div> <div class="carousel-item "> <div class="container newz"> <div class="iteam-news"> <div class="wrapTODPre card"><a target="_blank" href="' + news.newsLink[1] + '"> <img class="card-img-top cardImg" src="' + news.newsThumb[1] + '"> <div class="card-body bg-light text-dark "> <h4>' + news.newsTitle[1] + '</h4> </div> </a> <div class=" bg-danger text-white" style="text-align:left;"> <p>' + news.conTitle1[1] + '<a target="_blank" class="readmore" href="' + news.conLink1[1] + '">' + news.conSiteName1[1] + '</a> </p> <hr> <p>' + news.conTitle2[1] + '<a target="_blank" class="readmore" href="' + news.conLink2[1] + '">' + news.conSiteName2[1] + '</a></p> </div> </div> </div> </div> </div> <div class="carousel-item"> <div class="container newz"> <div class="iteam-news"> <div class="wrapTODPre card"><a target="_blank" href="' + news.newsLink[2] + '"> <img class="card-img-top cardImg" src="' + news.newsThumb[2] + '"> <div class="card-body bg-light text-dark "> <h4>' + news.newsTitle[2] + '</h4> </div> </a> <div class=" bg-danger text-white" style="text-align:left;"> <p>' + news.conTitle1[2] + '<a target="_blank" class="readmore" href="' + news.conLink1[2] + '">' + news.conSiteName1[2] + '</a> </p> <hr> <p>' + news.conTitle2[2] + '<a target="_blank" class="readmore" href="' + news.conLink2[2] + '">' + news.conSiteName2[2] + '</a></p> </div> </div> </div> </div> </div> <div class="carousel-item"> <div class="container newz"> <div class="iteam-news"> <div class="wrapTODPre card"><a target="_blank" href="' + news.newsLink[3] + '"> <img class="card-img-top cardImg" src="' + news.newsThumb[3] + '"> <div class="card-body bg-light text-dark "> <h4>' + news.newsTitle[3] + '</h4> </div> </a> <div class=" bg-danger text-white" style="text-align:left;"> <p>' + news.conTitle1[3] + '<a target="_blank" class="readmore" href="' + news.conLink1[3] + '">' + news.conSiteName1[3] + '</a> </p> <hr> <p>' + news.conTitle2[3] + '<a target="_blank" class="readmore" href="' + news.conLink2[3] + '">' + news.conSiteName2[3] + '</a></p> </div> </div> </div> </div> </div> <div class="carousel-item"> <div class="container newz"> <div class="iteam-news"> <div class="wrapTODPre card"><a target="_blank" href="' + news.newsLink[4] + '"> <img class="card-img-top cardImg" src="' + news.newsThumb[4] + '"> <div class="card-body bg-light text-dark "> <h4>' + news.newsTitle[4] + '</h4> </div> </a> <div class=" bg-danger text-white" style="text-align:left;"> <p>' + news.conTitle1[4] + '<a target="_blank" class="readmore" href="' + news.conLink1[4] + '">' + news.conSiteName1[4] + '</a> </p> <hr> <p>' + news.conTitle2[4] + '<a target="_blank" class="readmore" href="' + news.conLink2[4] + '">' + news.conSiteName2[4] + '</a></p> </div> </div> </div> </div> </div> <div class="carousel-item"> <div class="container newz"> <div class="iteam-news"> <div class="wrapTODPre card"><a target="_blank" href="' + news.newsLink[5] + '"> <img class="card-img-top cardImg" src="' + news.newsThumb[5] + '"> <div class="card-body bg-light text-dark "> <h4>' + news.newsTitle[5] + '</h4> </div> </a> <div class=" bg-danger text-white" style="text-align:left;"> <p>' + news.conTitle1[5] + '<a target="_blank" class="readmore" href="' + news.conLink1[5] + '">' + news.conSiteName1[5] + '</a> </p> <hr> <p>' + news.conTitle2[5] + '<a target="_blank" class="readmore" href="' + news.conLink2[5] + '">' + news.conSiteName2[5] + '</a></p> </div> </div> </div> </div> </div> <div class="carousel-item"> <div class="container newz"> <div class="iteam-news"> <div class="wrapTODPre card"><a target="_blank" href="' + news.newsLink[6] + '"> <img class="card-img-top cardImg" src="' + news.newsThumb[6] + '"> <div class="card-body bg-light text-dark "> <h4>' + news.newsTitle[6] + '</h4> </div> </a> <div class=" bg-danger text-white" style="text-align:left;"> <p>' + news.conTitle1[6] + '<a target="_blank" class="readmore" href="' + news.conLink1[6] + '">' + news.conSiteName1[6] + '</a> </p> <hr> <p>' + news.conTitle2[6] + '<a target="_blank" class="readmore" href="' + news.conLink2[6] + '">' + news.conSiteName2[6] + '</a></p> </div> </div> </div> </div> </div> </div><br><br> <ol class="carousel-indicators"> <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li> <li data-target="#carouselExampleIndicators" data-slide-to="1"></li> <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> <li data-target="#carouselExampleIndicators" data-slide-to="3"></li> <li data-target="#carouselExampleIndicators" data-slide-to="4"></li> <li data-target="#carouselExampleIndicators" data-slide-to="5"></li> <li data-target="#carouselExampleIndicators" data-slide-to="6"></li> </ol> <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a></div>';
-            }
-            var y = Math.floor((Math.random() * 6) + 1);
-            var quotes = JSON.parse(json.records[od].HayQuotes);
-            for (prop in json.records[y]) {
-              document.getElementById("Bio2").innerHTML = '<h5 style="color:#DD1D16;"><b>' + json.records[y].Bio2 + '</b></h5><p>' + quotes.Quoteimi[y] + '</p>';
-            }
-            document.getElementById("iminews_json").value = json.records[od].imiNews;
-            document.getElementById("youvid_json").value = json.records[od].YouVid;
-            document.getElementById("gifimi_json").value = json.records[od].GIFGifts;
-            document.getElementById("quoteimi_json").value = json.records[od].HayQuotes;
-            document.getElementById("loader").style.visibility = "hidden";
-
-            
-            break;
-          }
-
-          }
-          });*/
-
         }
         function ctrlqobdm(e){
           var res = e.result;
@@ -552,7 +505,7 @@
             document.getElementById("quoteimi_json").value = res[0].HayQuotes;
             document.getElementById("loader").style.display = "none";
          
-            var motostr = unescape(res[0].ADMIINMotto);
+            var motostr = decodeURIComponent(res[0].ADMIINMotto);
             var motocon = motostr.split('{biz}');
             document.getElementById('motoincon').style.display = 'block';
             document.getElementById('motoincon').innerHTML = '<div class="motocondone"><img class="mottoconimg" src="'+motocon[0]+'"><div class="motocontit">'+motocon[1]+'</div></div><hr><div class="motocondtwo">'+motocon[2]+'</div>';
