@@ -47,7 +47,7 @@
     </section> 
 <div id="adminmoto" align="center">
 <div id="mmottocontent">
-<form id="obdmmottoform" target="hiddenframe" autocomplete="off">
+<form id="obdmmottoform" onsubmit="event.preventDefault();" autocomplete="off">
   <div id="updateobdm">
     <button class="btn btn-outline-warning" id="upmotto" type="button" style="width:70%;">Update</button>
   </div>
@@ -77,7 +77,7 @@
     <div>
       <div align="center" id="logAd">
         <div style="width:80%;max-width:400px;margin-top:40px;"><br><br>
-          <form target="hiddenframe"><img class="topImg" src="../image/biz-admin.jpg"><br> <br><input autocomplete="off" type="password" id="idop" class="form-control" placeholder="********" required /> <input autocomplete="off" type="submit" Value="Admi-in" style="width:100%;max-width:400px;background-color:#dd1d16;color:white;border:none;height:35px;border-radius:4px;" id="in"></form>
+          <form onsubmit="event.preventDefault();"><img class="topImg" src="../image/biz-admin.jpg"><br> <br><input autocomplete="off" type="password" id="idop" class="form-control" placeholder="********" required /> <input autocomplete="off" type="submit" Value="Admi-in" style="width:100%;max-width:400px;background-color:#dd1d16;color:white;border:none;height:35px;border-radius:4px;" id="in"></form>
         </div>
         <div id="loader1" class="spinner-border text-light"></div> <br><br><br><br>
       </div>
@@ -92,7 +92,7 @@
           </div>
           <div class="content">
             <hr style="border-color:white;width:100%;max-width:600px;">
-            <form id="gif_edit" target="hiddenframe">
+            <form id="gif_edit" onsubmit="event.preventDefault();">
               <div align="center"><input autocomplete="off" type="url" id="g1" name="GIFimi" class="form-control" placeholder="GIF Link" required /><input id="g2" autocomplete="off" type="url" name="GIFimi" class="form-control" placeholder="GIF Link" required /><input id="g3" autocomplete="off" type="url" name="GIFimi" class="form-control" placeholder="GIF Link" required /><input id="g4" autocomplete="off" type="url" name="GIFimi" class="form-control" placeholder="GIF Link" required /><input autocomplete="off" id="g5" type="url" name="GIFimi" class="form-control" placeholder="GIF Link" required /><input id="g6" autocomplete="off" type="url" name="GIFimi" class="form-control" placeholder="GIF Link" required /><input id="g7" autocomplete="off" type="url" name="GIFimi" class="form-control" placeholder="GIF Link" required /></div> <input autocomplete="off" type="submit" id="upGif" value="Update" />
             </form><br><input autocomplete="off" type="button" id="pregif" value="Preview" disabled="disabled" style="background-color:blue;color:white;border:none;border-radius:4px;padding:4px 6px;" /><br>
             <p id="connectUpGifs" style="color:white;display:none;">GIFs Updated</p> <input id="gifimi_json" oninput="checklength(this);" /><br> <button style="width:200px;" type="button" id="postgif" class="btn btn-warning" disabled><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
@@ -110,7 +110,7 @@
           </div>
           <div class="content">
             <hr style="border-color:white;width:100%;max-width:600px;">
-            <form id="imi_news" target="hiddenframe">
+            <form id="imi_news" onsubmit="event.preventDefault();">
               <div align="center">
                 <div class="input_fields_wrap">
                   <h5 style="float:left;color:white;">Featured News</h5><br><br><textarea rows="4" autocomplete="off" type="text" name="newsTitle" class="form-control" placeholder="News Title" required></textarea> <input autocomplete="off" type="url" name="newsLink" class="form-control" placeholder="News Link" required /> <input autocomplete="off" type="url" name="newsThumb" class="form-control" placeholder="News Thumbnail" required />
@@ -168,7 +168,7 @@
           </div>
           <div class="content">
             <hr style="border-color:white;width:100%;max-width:600px;">
-            <form id="quote_edit" target="hiddenframe">
+            <form id="quote_edit" onsubmit="event.preventDefault();">
               <div align="center"><textarea rows="4" autocomplete="off" type="text" id="quote1" name="Quoteimi" class="form-control" placeholder="Your Quote" required></textarea><textarea rows="4" id="quote2" autocomplete="off" type="text" name="Quoteimi" class="form-control" placeholder="Your Quote" required></textarea><textarea rows="4" id="quote3" autocomplete="off" type="text" name="Quoteimi" class="form-control" placeholder="Your Quote" required></textarea><textarea rows="4" id="quote4" autocomplete="off" type="text" name="Quoteimi" class="form-control" placeholder="Your Quote" required></textarea><textarea rows="4" autocomplete="off" id="quote5" type="text" name="Quoteimi" class="form-control" placeholder="Your Quote" required></textarea><textarea rows="4" id="quote6" autocomplete="off" type="text" name="Quoteimi" class="form-control" placeholder="Your Quote" required></textarea><textarea rows="4" id="quote7" autocomplete="off" type="text" name="Quoteimi" class="form-control" placeholder="Your Quote" required></textarea></div> <input autocomplete="off" type="submit" id="upQuote" value="Update" />
             </form><br><input autocomplete="off" type="button" id="prequote" value="Preview" disabled="disabled" style="background-color:blue;color:white;border:none;border-radius:4px;padding:4px 6px;" /><br>
             <p id="connectUpQuotes" style="color:white;display:none;">Quotes Updated</p> <input id="quoteimi_json" oninput="checklength(this);" /><br> <button style="width:200px;" type="button" id="postq" class="btn btn-warning" disabled><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-quote" viewBox="0 0 16 16">
@@ -201,7 +201,7 @@
               </svg></div>
           </div>
           <div id="crelitebrd">
-            <form id="creltfrm" target="hiddenframe">
+            <form id="creltfrm" onsubmit="event.preventDefault();">
               <label> Create Elite Pass:</label><br>
               <input id="epassone" type="text" class="form-control creltin" placeholder="ABC" maxlength="3" style="text-transform: uppercase;" required />
               <input id="epasstwo" type="text" class="form-control creltin" placeholder="6K" maxlength="2" style="text-transform: uppercase;" required />
@@ -272,7 +272,6 @@
     </div><br><br><br>
 <input id="hkhds" class='ckdsd'> <input id="usidobdmdef" type="text" class='ckdsd'/>
 <input id="hkhdu" class='ckdsd' ><input id="hkhdoc" type="text" class='ckdsd' >
-<iframe name="hiddenframe" id="hiddenframe" style="display:none;"></iframe>
     <footer style="background:transparent;">
       <div align="center" style="background:black;padding-top:10px;height:60px;">
         <p><span style="float:left;"><a href="mailto:info@mwfbiz.com">info@mwfbiz.com</a></span><span style="color:#f0f0f0;float:right;">© 2023 by <b>mwfbiz.COM</b></span></p>
