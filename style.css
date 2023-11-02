@@ -242,7 +242,9 @@ body {
     text-decoration-color: #dd1d16;
     color: white;
   }
-
+  #News1 iframe{
+    background-color: #313131;
+  }
   #miv {
     display: none;
     text-align: center;
