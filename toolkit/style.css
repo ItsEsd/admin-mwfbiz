@@ -1,0 +1,247 @@
+body {
+    overflow-x: hidden;
+    background-color: #161616;
+  }
+
+  img {
+    background-color: white;
+  }
+
+  .intLink {
+    cursor: pointer;
+  }
+
+  .intLink {
+    cursor: pointer;
+  }
+
+  #toolBar2 button{
+    border: 0px;
+    width:26px;
+    height:27px;
+    background-color:#c8c8c8 ;
+    margin:2px;
+    padding:1px;
+  }
+  #toolBar2 i{font-size: 14px;}
+  #toolBar1 select {
+    font-size: 10px;
+  }
+
+  #textBox {
+    width: 100%;
+    height: 400px;
+    border: 2px solid #dd1d16;
+    padding: 6px;
+    border-radius: 4px;
+    text-align: left;
+    overflow: scroll;
+    background-color: white;
+    color:black;
+  }
+
+  #textBox:focus {
+    outline: none;
+  }
+
+  #editMode label {
+    cursor: pointer;
+  }
+
+  #toolBar1,
+  #toolBar2 {
+    display: inline-block;
+    margin-top: 6px;
+  }
+
+  select {
+    color: #dd1d16;
+    background-color: black;
+  }
+
+  .modal-backdrop {
+    background-color: #161616;
+  }
+
+  .modal-content {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .modal-dialog {
+    margin-top: 100px;
+  }
+
+  .Canvas {
+    font: 12pt Verdana;
+    background-color: #ECECEC;
+    color: #000000;
+    width: 100%;
+    border: solid 1px #dd1d16;
+    border-radius: 4px;
+  }
+
+  .ObjectBrace {
+    color: #00AA00;
+    font-weight: bold;
+  }
+
+  .ArrayBrace {
+    color: #0033FF;
+    font-weight: bold;
+  }
+
+  .PropertyName {
+    color: #CC0000;
+    font-weight: bold;
+  }
+
+  .String {
+    color: #007777;
+  }
+
+  .Number {
+    color: #AA00AA;
+  }
+
+  .Boolean {
+    color: #0000FF;
+  }
+
+  .Function {
+    color: #AA6633;
+    text-decoration: italic;
+  }
+
+  .Null {
+    color: #0000FF;
+  }
+
+  .Comma {
+    color: #000000;
+    font-weight: bold;
+  }
+
+  PRE.CodeContainer {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  PRE.CodeContainer img {
+    cursor: pointer;
+    border: none;
+    margin-bottom: -1px;
+  }
+
+  #CollapsibleViewDetail a {
+    padding-left: 10px;
+  }
+
+  #ControlsRow {
+    font: 11px Georgia;
+    display: inline-block;
+  }
+
+  #TabSizeHolder {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #HeaderTitle {
+    text-align: right;
+    font-size: 11px;
+  }
+
+  #HeaderSubTitle {
+    margin-bottom: 2px;
+    margin-top: 0px
+  }
+
+  #RawJson {
+    width: 99%;
+    height: 130px;
+  }
+
+  A.OtherToolsLink {
+    color: #555;
+    text-decoration: none;
+  }
+
+  A.OtherToolsLink:hover {
+    text-decoration: underline;
+  }
+
+  #jsonF img {
+    width: 14px;
+    background: transparent;
+  }
+
+  textarea:focus {
+    outline: none;
+  }
+
+  textarea {
+    background-color: #f0f0f0;
+    color: black;
+    border: 1px solid #dd1d16;
+    border-radius: 4px;
+  }
+
+  input,
+  span,
+  label {
+    font: 14px Verdana;
+    color: #dd1d16;
+    ;
+  }
+
+  #format {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  footer a {
+    color: #ffd703;
+  }
+
+  footer a:hover {
+    color: #ffd703;
+    text-decoration: underline;
+  }
+
+  footer {
+    font-family: 'Shadows Into Light', sans-sarif;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+  }
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+  }
+
+  .sticky img {
+    width: 100%;
+    max-width: 300px;background:transparent;
+  }
+
+  .qb a {
+    margin-right: 10px;
+    float: right;
+    color: white;
+    margin-bottom: 2px;
+    text-decoration: none;
+  }
+
+  .qb a:hover {
+    margin-right: 18px;
+    transition: 0.3s;
+  }
+  #htmlviewtx{
+  height:400px;
+  }
+  #sourceText{
+  min-height:350px;
+  font-family: 'Courier New', Courier, monospace;
+}
