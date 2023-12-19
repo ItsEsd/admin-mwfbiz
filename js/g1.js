@@ -73,7 +73,7 @@
         var obdm_miQsUp = "https://script.google.com/macros/s/AKfycbxRMXDttPfJR_-pZ9KTgHKw0FKDcPdHGzQWkpbS7Ohf5CAL6yguN_rtsu5w5o70HY_Y/exec";
         function upquotesimi() {
           jQuery("connectUpQuotes").empty();
-          var upqs = jQuery("#quoteimi_json").val();
+          var upqs = encodeURIComponent(jQuery("#quoteimi_json").val());
           var idpmv = jQuery("#idop").val();
           var idpmn = jQuery('#usidobdmdef').val();
           if (upqs != 0) {
