@@ -42,7 +42,6 @@ function setDocMode(bToSource) {
       oContent.selectNodeContents(oDoc.firstChild);
       oDoc.innerHTML = oContent.toString();
       oDoc.style.height = "350";
-
     }
     oDoc.contentEditable = true;
   }
@@ -53,57 +52,84 @@ function printDoc() {
   if (!validateMode()) {
     return;
   }
-  var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
+  var oPrntWin = window.open(
+    "",
+    "_blank",
+    "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes"
+  );
   oPrntWin.document.open();
-  oPrntWin.document.write("<!doctype html><html><head><title>Mind Without Fear | M W F<\/title><\/head><body onload=\"print();\">" + oDoc.innerHTML + "<\/body><\/html>");
+  oPrntWin.document.write(
+    '<!doctype html><html><head><title>Mind Without Fear | M W F</title></head><body onload="print();">' +
+      oDoc.innerHTML +
+      "</body></html>"
+  );
   oPrntWin.document.close();
 }
 document.getElementById("crImage").addEventListener("input", selectImg);
 document.getElementById("rd1").addEventListener("click", selectImg);
 document.getElementById("rd2").addEventListener("click", selectImg);
 document.getElementById("rd3").addEventListener("click", selectImg);
-
+function addvdr() {
+  formatDoc("insertHTML", "<hr style='border-color:grey;margin:0px;'><br>");
+}
 function selectImg() {
   var imgS = document.getElementById("crImage").value;
   document.getElementById("previewImg").style.display = "block";
   document.getElementById("radioS").style.display = "block";
-  document.getElementById("previewImg").innerHTML = '<img src="' + imgS + '" width="100%" height="240px">';
-  if (imgS != '' && imgS != 'http://') {
-    if (document.getElementById('rd1').checked) {
+  document.getElementById("previewImg").innerHTML =
+    '<img src="' + imgS + '" width="100%" height="240px">';
+  if (imgS != "" && imgS != "http://") {
+    if (document.getElementById("rd1").checked) {
       document.getElementById("btnOkImg").disabled = false;
-      formatDoc('insertHTML', '<img src="' + imgS + '" width="30%" style="float:left; padding:6px;margin:4px;">');
+      formatDoc(
+        "insertHTML",
+        '<img src="' +
+          imgS +
+          '" width="30%" style="float:left; padding:6px;margin:4px;">'
+      );
     }
-    if (document.getElementById('rd2').checked) {
+    if (document.getElementById("rd2").checked) {
       document.getElementById("btnOkImg").disabled = false;
-      formatDoc('insertHTML', '<img src="' + imgS + '" width="50%" style="float:right;padding:6px;margin:4px;">');
+      formatDoc(
+        "insertHTML",
+        '<img src="' +
+          imgS +
+          '" width="50%" style="float:right;padding:6px;margin:4px;">'
+      );
     }
-    if (document.getElementById('rd3').checked) {
+    if (document.getElementById("rd3").checked) {
       document.getElementById("btnOkImg").disabled = false;
-      formatDoc('insertHTML', '<img src="' + imgS + '" width="98%" style="float:center;padding:6px;margin:4px;">');
+      formatDoc(
+        "insertHTML",
+        '<img src="' +
+          imgS +
+          '" width="98%" style="float:center;padding:6px;margin:4px;">'
+      );
     } else {
       return false;
     }
   } else {
-    return false
+    return false;
   }
 }
 
 function CreateLink() {
-  var sLnk = document.getElementById('crlink').value;
-  if (sLnk != '' && sLnk != 'http://') {
-    formatDoc('createlink', sLnk)
+  var sLnk = document.getElementById("crlink").value;
+  if (sLnk != "" && sLnk != "http://") {
+    formatDoc("createlink", sLnk);
   } else {
-    return false
+    return false;
   }
 }
 
 function getId(url) {
-  var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  var regExp =
+    /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
   var match = url.match(regExp);
   if (match && match[2].length == 11) {
     return match[2];
   } else {
-    return 'error';
+    return "error";
   }
 }
 document.getElementById("crVideo").addEventListener("input", embed_vid);
@@ -112,45 +138,52 @@ function embed_vid() {
   document.getElementById("previewvid").style.display = "block";
   var link = document.getElementById("crVideo").value;
   var myId = getId(link);
-  if (link != '' && link != 'http://') {
-    document.getElementById("previewvid").innerHTML = '<iframe width="100%" src="//www.youtube.com/embed/' + myId + '" frameborder="0" allowfullscreen></iframe>';
-    formatDoc('insertHTML', '<div align="center"><div class="embed-responsive embed-responsive-16by9" style="max-width:600px; padding-top:10px;"><iframe class="embed-responsive-item" src="//www.youtube.com/embed/' + myId + '" frameborder="0" allowfullscreen></iframe></div></div><br>');
+  if (link != "" && link != "http://") {
+    document.getElementById("previewvid").innerHTML =
+      '<iframe width="100%" src="//www.youtube.com/embed/' +
+      myId +
+      '" frameborder="0" allowfullscreen></iframe>';
+    formatDoc(
+      "insertHTML",
+      '<div align="center"><div class="embed-responsive embed-responsive-16by9" style="max-width:600px; padding-top:10px;"><iframe class="embed-responsive-item" src="//www.youtube.com/embed/' +
+        myId +
+        '" frameborder="0" allowfullscreen></iframe></div></div><br>'
+    );
   } else {
     return false;
   }
 }
 
-$('#rmvcls').click(function(){
-var opnt = document.getElementById('textBox');
-var classes = [];
-$('#textBox *:not(script)').removeAttr('style');
-$('#textBox *:not(script)').each(function(){
-_classes = $(this).attr('class') ? $(this).attr('class').split(' ') : [];
-_classes.forEach(function(entry){
-if(classes.indexOf(entry) < 0){
-  classes.push(entry);
-}
-});
-});
-var _classlist = classes.length;
-for(var k = 0; k < _classlist; k++){
-if(classes[k] !== ""){
-var cls = '.' + classes[k];
-console.log(cls);
-$(cls).removeAttr('id');
-$(cls).removeAttr('style');
-$(cls).removeAttr('dir');
-$(cls).removeAttr('class');
-}
-}
-
+$("#rmvcls").click(function () {
+  var opnt = document.getElementById("textBox");
+  var classes = [];
+  $("#textBox *:not(script)").removeAttr("style");
+  $("#textBox *:not(script)").each(function () {
+    _classes = $(this).attr("class") ? $(this).attr("class").split(" ") : [];
+    _classes.forEach(function (entry) {
+      if (classes.indexOf(entry) < 0) {
+        classes.push(entry);
+      }
+    });
+  });
+  var _classlist = classes.length;
+  for (var k = 0; k < _classlist; k++) {
+    if (classes[k] !== "") {
+      var cls = "." + classes[k];
+      console.log(cls);
+      $(cls).removeAttr("id");
+      $(cls).removeAttr("style");
+      $(cls).removeAttr("dir");
+      $(cls).removeAttr("class");
+    }
+  }
 });
 
 var url_string = window.location.href;
 var url = new URL(url_string);
 var q = url.searchParams.get("_source");
-if(q =="other"){
-$('#jsonF,#txttitl').hide();
-$('.sticky').hide();
-$('#textBox').css('height','300px');
+if (q == "other") {
+  $("#jsonF,#txttitl").hide();
+  $(".sticky").hide();
+  $("#textBox").css("height", "300px");
 }
