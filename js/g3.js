@@ -38,8 +38,9 @@ $(document).ready(function () {
   var mtdescp = $("#mottocondescp").val();
   if (mtdescp == "") {
     jQuery("#descpmoto")
-      .html("** Please add a description (max 2000 characters)")
-      .css(["font-size", "12px"], ["text-align", "right"]);
+      .html("** Motto Description (max 2000 characters)")
+      .css("font-size", "12px");
+    jQuery("#descpmoto").css("text-align", "right");
   }
 });
 jQuery("#coneditmotto").on("keyup", function () {
